@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="cn-Hans">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="前言这几天给自己制定了一个短期的学习目标，深入地学习一下Android网络编程的知识，希望能够由表及里，从最基本的HTTP协议理解，到Android中原生的WebView、HttpUrlConnection的使用，再到一些著名的网络网络框架比如Volley、OkHttp、Retrofit等的基础用法">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Owen Lee">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Android 网络编程系列（一）写在开始之前"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="海树"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Android 网络编程系列（一）写在开始之前 - 海树</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">海树</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://image.wufazhuce.com/FvFsnN9Ix9qVdf6Lasj6TWZd7dQZ')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Android 网络编程系列（一）写在开始之前</h1>
+                    
+                    <h2 class="post-subheading">
+                        系列文章的第一篇，写一些其他的。（内含 Android 网络编程学习资料）
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-10-11
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Android-网络编程/">#Android 网络编程</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>这几天给自己制定了一个短期的学习目标，深入地学习一下Android网络编程的知识，希望能够由表及里，从最基本的HTTP协议理解，到Android中原生的WebView、HttpUrlConnection的使用，再到一些著名的网络网络框架比如Volley、OkHttp、Retrofit等的基础用法，最后达到从源码角度理解上述网络框架原理和精髓的层次。我不知道自己能够做到哪一步，反正走一步算一步，毕竟坚持就是胜利。</p>
+<p>以前自己的学习效率非常糟糕，一个不是很难的知识点往往要花费我很多的时间和精力来学习。后来我看到了一篇关于<a href="http://keeganlee.me/post/full-stack/20170909" target="_blank" rel="external">「如何高效学习」</a>的文章，觉得深受启发。所以在这次的系列学习中，我决定按照这篇文章中的一些方法来实践一下。</p>
+<h4 id="明确学习目的"><a href="#明确学习目的" class="headerlink" title="明确学习目的"></a>明确学习目的</h4><p>「如何高效学习」一文中讲到，学习要想提高效率，需要做到三点：目标导向、难度适中、能用得上。其中第一点就是要求我们在学习一样东西之前要首先确定自己的目标，自己希望从这个东西中获得什么。</p>
+<p>对于我这次的阶段性学习来说，目的就是要深入理解Android的网络编程知识，深入意味着不再是仅仅浮于表面，知道一些函数的调用，而是要通过大量的阅读，充分理解这个知识点。并且要将学到的知识运用到实际的项目开发中去。</p>
+<h4 id="收集资料"><a href="#收集资料" class="headerlink" title="收集资料"></a>收集资料</h4><p>之前学习Android的知识，基本上是通过看书或者视频，一页一页、一个视频一个视频地看，针对性不强，现在我要学的算是一个Android开发中的一个专题内容。需要更多针对性的资料来阅读。而且在「如何高效学习」这篇文章中，作者也提到，如果要学习一个知识点，必须进行大量的泛读。这个观点其实很好理解，一千个读者就有一千个哈姆雷特。即使是在技术这一方面，相同的东西，也会有很多不同的研究方向。并且，不同的开发者对于这个相同的东西也会有不一样的理解，甚至某一个开发者对于这个技术的理解出现了错误，这时如果不去对比其他资料而是全盘接收的话，那么这个错误无疑还会延续到自己身上。货比三家的手段在这里同样是适用的。</p>
+<p>所以这次在确定了学习这个专题后，我做的第一件事就是进行资料的收集。我的学习路线基本是参考了刘望舒Android知识体系中的网络编程这一部分内容。他整理了Android网络编程中的知识点，也有相应的教程供大家学习。<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-10-11/54767671.jpg" alt="Android网络编程"><br>这些知识点总结来说分为一下6个部分：</p>
+<ul>
+<li>了解HTTP协议</li>
+<li>Android中的WebView</li>
+<li>HttpUrlConnection用法</li>
+<li>Volley用法（深入到源码）</li>
+<li>OkHttp用法（深入到源码）</li>
+<li>Retrofit用法（深入到源码）</li>
+</ul>
+<p>以下就是我为这些知识点收集到的一些资料，基本上都是Android圈中大牛的博客比如郭霖大大、鸿洋大大等等，当然也不能忘了还有刘望舒大大。选择他们的博客是因为他们作为大牛，对于这些知识的理解一般来说都要超过普通的开发者，减少了很多出错的可能，并且能够有比较深刻的理解。在这里推荐一个鸿洋大大维护的Android学习网站<a href="www.wanandroid.com">「玩Android」</a>，里面也有Android的知识体系，收集了一些质量上乘的博客。可以省去很多手动收集资料的时间。</p>
+<ol>
+<li>了解HTTP协议</li>
+</ol>
+<ul>
+<li>刘望舒博客Http原理<br><a href="http://liuwangshu.cn/application/network/1-http.html" target="_blank" rel="external">HTTP协议原理</a></li>
+<li>阮一峰Http协议<br><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" target="_blank" rel="external">HTTP 协议入门</a></li>
+<li>菜鸟Http教程<br><a href="http://www.runoob.com/http/http-tutorial.html" target="_blank" rel="external">HTTP 教程</a></li>
+</ul>
+<ol>
+<li>WebView的使用</li>
+</ol>
+<ul>
+<li>typename WebView系列（3篇）<br><a href="http://blog.csdn.net/typename/article/details/39030091" target="_blank" rel="external">Android WebView 开发详解(一)</a><br><a href="http://blog.csdn.net/typename/article/details/39495409" target="_blank" rel="external"> Android WebView 开发详解(二)</a><br><a href="http://blog.csdn.net/typename/article/details/40302351" target="_blank" rel="external"> Android WebView 开发详解(三)</a></li>
+</ul>
+<ol>
+<li>HttpUrlConnection用法</li>
+</ol>
+<ul>
+<li>郭霖HttpUrlConnection<br><a href="http://blog.csdn.net/guolin_blog/article/details/12452307" target="_blank" rel="external">使用HttpURLConnection还是HttpClient？</a></li>
+<li>《第一行代码》相关内容</li>
+</ul>
+<ol>
+<li>Volley的使用（源码）</li>
+</ol>
+<ul>
+<li>郭霖Volley系列教程（4篇）<br><a href="http://blog.csdn.net/guolin_blog/article/details/17482095" target="_blank" rel="external">初识Volley的基本用法</a><br><a href="http://blog.csdn.net/guolin_blog/article/details/17482165" target="_blank" rel="external">使用Volley加载网络图片</a><br><a href="http://blog.csdn.net/guolin_blog/article/details/17612763" target="_blank" rel="external">定制自己的Request</a><br><a href="http://blog.csdn.net/guolin_blog/article/details/17656437" target="_blank" rel="external">带你从源码的角度理解Volley</a></li>
+<li>刘望舒Volley博客（2篇）<br><a href="http://liuwangshu.cn/application/network/3-volley.html" target="_blank" rel="external">从源码解析Volley</a><br><a href="http://liuwangshu.cn/application/network/4-volley-sourcecode.html" target="_blank" rel="external">Volley用法全解析</a></li>
+<li>鸿洋Volley<br><a href="http://blog.csdn.net/lmj623565791/article/details/47721631" target="_blank" rel="external">Volley 图片加载相关源码解析</a></li>
+<li>泡在网上的日子Volley<br><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0526/2934.html" target="_blank" rel="external">网络请求库Volley详解</a></li>
+</ul>
+<ol>
+<li>OkHttp的使用（源码）</li>
+</ol>
+<ul>
+<li>Okhttp官方文档<br><a href="https://square.github.io/okhttp/" target="_blank" rel="external">Okhttp</a></li>
+<li>鸿洋Okhttp博客（3篇）<br><a href="http://blog.csdn.net/lmj623565791/article/details/47911083" target="_blank" rel="external">是时候来了解OkHttp了</a><br><a href="http://blog.csdn.net/lmj623565791/article/details/48129405" target="_blank" rel="external">当OkHttp遇到Https</a><br><a href="http://blog.csdn.net/lmj623565791/article/details/49734867" target="_blank" rel="external">一个改善的okHttp封装库</a></li>
+<li>泡在网上的日子Okhttp<br><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0106/2275.html" target="_blank" rel="external">OkHttp使用教程</a></li>
+<li>刘望舒OkHttp（4篇）<br><a href="http://liuwangshu.cn/application/network/5-okhttp2x.html" target="_blank" rel="external">OkHttp2.x用法全解析</a><br><a href="http://liuwangshu.cn/application/network/6-okhttp3.html" target="_blank" rel="external">OkHttp3用法全解析</a><br><a href="http://liuwangshu.cn/application/network/7-okhttp3-sourcecode.html" target="_blank" rel="external">源码解析OkHttp前篇-请求网络</a><br><a href="http://liuwangshu.cn/application/network/8-okhttp3-sourcecode2.html" target="_blank" rel="external">源码解析OkHttp后篇-复用连接池</a></li>
+</ul>
+<ol>
+<li>Retrofit用法及原理（源码）</li>
+</ol>
+<ul>
+<li>Retrofit官方文档<br><a href="http://square.github.io/retrofit/" target="_blank" rel="external">Retrofit</a></li>
+<li>鸿洋Retrofit博客<br><a href="http://blog.csdn.net/lmj623565791/article/details/51304204" target="_blank" rel="external">Retrofit2 完全解析 探索与okhttp之间的关系</a></li>
+<li><a href="http://www.jianshu.com/p/308f3c54abdd" target="_blank" rel="external">你真的会用Retrofit2吗?Retrofit2完全教程</a></li>
+<li>刘望舒Retrofit（3篇）<br><a href="http://liuwangshu.cn/application/network/9-retrofit2.html" target="_blank" rel="external">Retrofit2前篇-基本使用</a><br><a href="http://liuwangshu.cn/application/network/10-retrofit2-annotations.html" target="_blank" rel="external">Retrofit2后篇-注解</a><br><a href="http://liuwangshu.cn/application/network/11-retrofit2-sourcecode.html" target="_blank" rel="external">源码解析Retrofit</a></li>
+</ul>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>资料收集完毕，就可以进入下一阶段了，从头开始，从基础入手，干翻这个系列专题！！</p>
+<p>下篇文章见。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/weiyushiguang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Owen Lee<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

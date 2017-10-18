@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cn-Hans">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="申明本指南翻译自 BLockly 官方文档。
+
+Blockly 中的块由三部分组成：
+
+块定义对象：定义块的外观和行为，包括文本，颜色，作用域和连接。
+工具箱引用：工具箱 XML 文件中每种类型的块的引用，因此用户可以将其添加到工作区。
+发生器函数：生成此块的代码字符串。它总是用 JavaScrip">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Owen Lee">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Blockly4Android 开发指南（3）添加自定义块"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="海树"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Blockly4Android 开发指南（3）添加自定义块 - 海树</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">海树</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://image.wufazhuce.com/FlClKq2eSOZO3zvYc4uZSDYkYFTU')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Blockly4Android 开发指南（3）添加自定义块</h1>
+                    
+                    <h2 class="post-subheading">
+                        官方文档中关于添加自定义块的描述
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-10-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Blockly4Android/">#Blockly4Android</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="申明"><a href="#申明" class="headerlink" title="申明"></a>申明</h3><p>本指南翻译自 BLockly 官方文档。</p>
+<hr>
+<p>Blockly 中的块由三部分组成：</p>
+<ul>
+<li>块定义对象：定义块的外观和行为，包括文本，颜色，作用域和连接。</li>
+<li>工具箱引用：工具箱 XML 文件中每种类型的块的引用，因此用户可以将其添加到工作区。</li>
+<li>发生器函数：生成此块的代码字符串。它总是用 JavaScript 编写，即使目标语言不是 JavaScript。</li>
+</ul>
+<p>虽然 Blockly 的 Web 版本还支持使用 JavaScript 以代码的方式来构建块定义对象，但 Android 版 的 Blockly 不支持这个功能。</p>
+<h3 id="块定义"><a href="#块定义" class="headerlink" title="块定义"></a>块定义</h3><p>构建一个新块的定义最简单的方式是使用「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/blockly-developer-tools" target="_blank" rel="external">BLockly 开发者工具</a>」。由于 Android 版的 Blockly 仅支持 JSON 格式的块定义，因此将工厂的「语言代码」设置为 JSON。有关此格式的详细信息，请点击「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/define-blocks#json_definitions" target="_blank" rel="external">此处</a>」。</p>
+<p>当使用 AbstractBlocklyActivity 时， getBlockDefinitionsJsonPaths（）方法返回应用程序 assets 目录下的资源文件路径列表，向系统提供块定义文件。块定义可以通过调用 reloadBlockDefinitions（）来重新加载。</p>
+<p>当使用原始的 BlocklyController 时，通过多个 BlocklyController.addBlockDefinitions（..）方法之一添加块定义。  </p>
+<p>可以加载多个 .json 文件，但应该确保块的类型 ID 是唯一的。</p>
+<h3 id="添加工具箱引用"><a href="#添加工具箱引用" class="headerlink" title="添加工具箱引用"></a>添加工具箱引用</h3><p>让系统知道你添加了新的块并不够，你还需要让用户知道这一点。工具箱就让用户知道他们能用哪些块。 Android 版的 BLockly 使用和 Web 版相同形式的 XML 文件来定义工具箱，详情请参阅「<a href="https://developers.google.cn/blockly/guides/configure/android/toolbox" target="_blank" rel="external">此处</a>」。</p>
+<p>AbstractBlocklyActivity 使用 getToolboxContentsXmlPath（）返回的 .xml 资源文件的内容填充工具箱，reloadToolbox（）将重新加载工具箱（再次调用 getToolboxContentsXmlPath（））。</p>
+<p>你也可以调用任何 BlocklyController.setToolboxConfiguration(..) 的方法。</p>
+<p>通常来说，大多数块应该包含在工具箱中，但是有一些可以被忽略。这可以用于支持不推荐使用的块，教导个别概念，或隐藏当前无法使用的块。有关详细信息，请参阅「<a href="https://developers.google.cn/blockly/guides/configure/android/toolbox" target="_blank" rel="external">填充工具箱</a>」。</p>
+<h3 id="添加生成器函数"><a href="#添加生成器函数" class="headerlink" title="添加生成器函数"></a>添加生成器函数</h3><p>最后，为了将块转化为代码，将一种类型的块与一个JavaScript生成器函数进行配对。</p>
+<p>请在「<a href="https://developers.google.cn/blockly/guides/configure/android/custom-generators" target="_blank" rel="external">使用自定义生成器</a>」中查看更多相关内容。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/weiyushiguang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Owen Lee<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

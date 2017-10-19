@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="cn-Hans">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="前言既然在 Android 中已经有了 ListView 和 GridView 这样的控件，那么我们为什么还要去使用 RecyclerView 这个控件呢？首先的一点就在于之前的 ListView 和 GridView 的性能并不是非常好。尽管两者都有自己的缓存机制，但还是有可以改进的空间，比如使用">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Owen Lee">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="认识更强大的滚动控件—— RecyclerView"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="海树"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>认识更强大的滚动控件—— RecyclerView - 海树</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">海树</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://opgrjw8x2.bkt.clouddn.com/17-10-19/84979854.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>认识更强大的滚动控件—— RecyclerView</h1>
+                    
+                    <h2 class="post-subheading">
+                        对 RecyclerView 的知识进行一个整理。
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-10-19
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Android/">#Android</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>既然在 Android 中已经有了 ListView 和 GridView 这样的控件，那么我们为什么还要去使用 RecyclerView 这个控件呢？首先的一点就在于之前的 ListView 和 GridView 的性能并不是非常好。尽管两者都有自己的缓存机制，但还是有可以改进的空间，比如使用 ViewHolder 来避免过多使用 <strong>findViewById</strong> 这样一个非常耗时的操作。而在 RecyclerView 中，直接将 ViewHolder 作为 RecyclerView  的一个子类，强制开发者使用它进行代码的优化。</p>
+<h3 id="RecyclerView-用法"><a href="#RecyclerView-用法" class="headerlink" title="RecyclerView 用法"></a>RecyclerView 用法</h3><p>RecyclerView 只关注与 item 的创建与回收，对于 item 的布局方式、item 的点击事件处理、动画效果、item 分隔等等一律不关注，这就是为什么 RecyclerView 的流畅度特别好的原因。</p>
+<h4 id="1-申明布局控件"><a href="#1-申明布局控件" class="headerlink" title="1. 申明布局控件"></a>1. 申明布局控件</h4><p>同 ListView 相似，首先需要在布局文件中申明 RecyclerView 这个控件。因为该控件是 Google 新推出的一个控件，为了兼容之前的 Android 版本，所以这个控件是放在 support.v7 的兼容库当中，因此需要添加相应的依赖，并且在引用时需要写完整的包名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile &apos;com.android.support:recyclerview-v7:24.2.1&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.RecyclerView</div><div class="line">    android:id=&quot;@+id/id_recyclerView&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot; /&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-在代码中引用控件，自定义-item-布局"><a href="#2-在代码中引用控件，自定义-item-布局" class="headerlink" title="2. 在代码中引用控件，自定义 item 布局"></a>2. 在代码中引用控件，自定义 item 布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//在 Activity 中通过 findViewById 来找到控件</div><div class="line">recycleView = (RecyclerView) findViewById(R.id.id_recyclerView);</div></pre></td></tr></table></figure>
+<p>建立自定义的 item 布局和 ListView 中过程完全一致，在此不贴代码了，附上效果图：<br><img src="http://img.mukewang.com/585d1fba000119b101920042.png" alt="图片描述"></p>
+<h4 id="3-新建-Adapter"><a href="#3-新建-Adapter" class="headerlink" title="3. 新建 Adapter"></a>3. 新建 Adapter</h4><p>根据 demo 的内容，我们新建 DramaAdapter 继承自 RecyclerView.Adapter，泛型为自定义的继承自 RecyclerView.ViewHolder 的内部类 DramaHolder，其父类中已经有了一个元素 itemView 对应列表中的每一个 item，所以我们自己只需要在 holder 中添加 item 布局中的每个控件，比如 TextView，ImageView 等等。同时需要复写自定义 ViewHolder 的构造方法，通过 findViewById 的方法将 holder 的各个属性与相应的控件绑定在一起，这样就可以避免过多的 findViewById 的操作，例如在我的 demo 中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public DramaHolder(View itemView) &#123;</div><div class="line">      super(itemView);</div><div class="line">    icon = (ImageView) itemView.findViewById(R.id.item_icon);</div><div class="line">    name = (TextView) itemView.findViewById(R.id.item_name);</div><div class="line">    progress = (TextView) itemView.findViewById(R.id.item_progress);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Adapter 中有三个方法需要复写，getItemCount ()，onCreateViewHolder ()，onBindViewHolder ()。</p>
+<p>在 Adapter 中应有 List 类型成员变量，用于接收 Activity 中的数据源，getItemCount 返回 List 的长度即可，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public int getItemCount() &#123;</div><div class="line">    return mDramaList.size();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Adapter 中最为关键的两个方法就是 onCreateViewHolder 和 onBindViewHolder，这两个方法的作用相当与我们在使用 ListView 自定义 Adapter 继承自 BaseAdapter 时复写的 getView () 方法作用是一致的，但是有所区别的就是 ListView 所接收的都是 View 类型的对象，而 RecyclerView 接收的都是 ViewHolder 对象。</p>
+<p>在 onCreateViewHolder() 法中通过 LayoutInflater 将自定义的 item 布局转为 View 对象，再将该对象与一个 Viewholder 对象相关联，并返回该 ViewHolder 对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public DramaAdapter.DramaHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_list_item,parent,false);</div><div class="line">    DramaHolder holder = new DramaHolder(view);</div><div class="line">    return holder;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>onBindViewHolder() 方法是真正将数据源与视图关联起来的函数所在了，根据传入的 position 拿到数据源中的 item 的各项数据，并通过 holder 的各个属性设置相应的数据，完成 Adapter 的功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onBindViewHolder(final DramaAdapter.DramaHolder holder, int position) &#123;</div><div class="line">    Drama drama = mDramaList.get(position);</div><div class="line">    holder.icon.setImageResource(drama.getIconId());</div><div class="line">    holder.name.setText(drama.getName());</div><div class="line">    holder.progress.setText(drama.getProgress());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-设置-RecyclerView-的布局方式"><a href="#4-设置-RecyclerView-的布局方式" class="headerlink" title="4. 设置 RecyclerView 的布局方式"></a>4. 设置 RecyclerView 的布局方式</h4><p>我们现在所完成的工作是将数据与视图进行绑定，但是不要忘了我们之前所说的 RecyclerView 只关注于 item 的创建与回收，而对于布局等等问题并不关注。所以为了解决布局的问题，Android 中使用布局管理器（LayoutManager）来设置 RecyclerView 的布局样式， LayoutManager 是一个抽象类，Android 中内置了几种它的实现类，分别呈现不同的布局效果。</p>
+<blockquote>
+<p><strong>LinearLayoutManager</strong><br>    线性的布局，有 HORIZONTAL 和 VERTICAL 两种，可以实现普通的 ListView 的效果与横向 ListView 的效果，如以下两张图：</p>
+</blockquote>
+<p><img src="http://img.mukewang.com/585d24f00001460d10801920.png" alt="图片描述"></p>
+<hr>
+<p><img src="http://img.mukewang.com/585d250c0001e74310780835.png" alt="图片描述"></p>
+<blockquote>
+<p><strong>GridLayoutManager</strong><br>    实现之前 GridView 的效果</p>
+</blockquote>
+<p><img src="http://img.mukewang.com/585d26070001e41610801920.png" alt="图片描述"></p>
+<blockquote>
+<p><strong>StaggeredGridLayoutManager</strong><br>    实现酷炫的瀑布流的效果</p>
+</blockquote>
+<p><img src="http://img.mukewang.com/585d261a0001880b10801920.png" alt="图片描述"></p>
+<p>也正是由于布局样式与 Adapter 之间是分开的，所以我们可以修改极小部分的代码就可以在 ListView，GridView 的样式中自由切换，还可以瞬间实现极为炫酷的瀑布流的效果。只需让我们的 RecyclerView 设置不同的 LayoutManager 就好了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">recycleView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));</div><div class="line"></div><div class="line">recycleView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));</div><div class="line"></div><div class="line">recycleView.setLayoutManager(new GridLayoutManager(this,3));</div><div class="line"></div><div class="line">recycleView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));</div></pre></td></tr></table></figure>
+<h4 id="5-处理-item-的点击事件"><a href="#5-处理-item-的点击事件" class="headerlink" title="5. 处理 item 的点击事件"></a>5. 处理 item 的点击事件</h4><p>在 RecyclerView 中并没有 ListView 中的 OnItemClickListener 和 OnItemLongClickListener 的接口，所以我们需要自己在 Adapter 中实现 item 的点击事件处理。虽然这样有一点麻烦，但也是有好处的，在 ListView 中，如果一个 item 中有一个 Button 时，那么如何处理这个 Button 的点击事件是非常麻烦的，而在 RecyclerView 中我们就可以为 item 中的任何一个控件设置独有的点击事件处理逻辑。这个点击事件的处理逻辑很显然应该在 onBindViewHolder() 方法中进行实现。</p>
+<ul>
+<li><strong>直接实现</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//在这里我就对 item 中的图片设置了一个点击事件的处理，以及对整个 item 的 Click 处理和 longClick 处理</div><div class="line">@Override</div><div class="line">public void onBindViewHolder(final DramaAdapter.DramaHolder holder, int position) &#123;</div><div class="line">    Drama drama = mDramaList.get(position);</div><div class="line">    holder.icon.setImageResource(drama.getIconId());</div><div class="line">    holder.name.setText(drama.getName());</div><div class="line">    holder.progress.setText(drama.getProgress());</div><div class="line">    holder.icon.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            Toast.makeText(v.getContext(),&quot;你点击了第&quot;+holder.getLayoutPosition()+&quot;项的图片&quot;,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    holder.itemView.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            Toast.makeText(v.getContext(),&quot;你点击了第&quot;+holder.getLayoutPosition()+&quot;项&quot;,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    holder.itemView.setOnLongClickListener(new View.OnLongClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public boolean onLongClick(View v) &#123;</div><div class="line">            removeItem(holder.getLayoutPosition());</div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>使用接口实现</strong></li>
+</ul>
+<p>通过接口将点击事件的处理转移到 Activity 中而不是在 Adapter 中显然是一种更好的方式。</p>
+<p>首先定义一个接口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public interface OnItemClickListener&#123;</div><div class="line">	void onItemClick(View v, int position);</div><div class="line">	void onItemLongClick(View v, int position);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>给我们自定义的 Adapter 增加 OnItemClickListener 类型的成员变量，并添加 setter 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class DramaAdapter extends RecyclerView.Adapter&lt;DramaViewHolder&gt; &#123;</div><div class="line">	OnItemClickListener mListener;</div><div class="line">	public void setOnItemClickListener(OnItemClickListener listener)&#123;</div><div class="line">		this.mListener = listener;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在 onBindViewHolder() 方法中，在 holder 的 itemView 等控件的点击或长点击事件中，调用接口成员变量 mListener 的 onItemClick() 或 onItemLongClick() 方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onBindViewHolder(final DramaAdapter.DramaHolder holder, int position) &#123;</div><div class="line">    ···</div><div class="line">    holder.itemView.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            if(mListener != null)&#123;</div><div class="line">	            mListener.onItemClick(v, position);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    holder.itemView.setOnLongClickListener(new View.OnLongClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public boolean onLongClick(View v) &#123;</div><div class="line">            if(mListener != null)&#123;</div><div class="line">	            mListener.onItemLongClick(v, position);</div><div class="line">	            return true;</div><div class="line">            &#125;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="6-item-的增加和删除"><a href="#6-item-的增加和删除" class="headerlink" title="6. item 的增加和删除"></a>6. item 的增加和删除</h4><p>在 Adapter 中实现两个权限为 public 的方法供在 Activity 中调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//添加子项</div><div class="line">public void addItem(int position)&#123;</div><div class="line">    Drama newOne = new Drama(R.mipmap.ic_launcher,&quot;新的剧集&quot;,&quot;新的进度&quot;);</div><div class="line">    mDramaList.add(position,newOne);</div><div class="line">    notifyItemInserted(position);</div><div class="line">&#125;</div><div class="line">public void removeItem(int position)&#123;</div><div class="line">    if (position &lt; mDramaList.size())&#123;</div><div class="line">        mDramaList.remove(position);</div><div class="line">        notifyItemRemoved(position);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在这里需要重点说明的是最后的<br>     <strong>notifyItemInserted(position);</strong><br>    <strong>notifyItemRemoved(position);</strong><br>    在执行添加 item 必须通过 notifyItemInserted(position) 来刷新视图<br>    在执行删除 item 必须通过 notifyItemRemoved(position) 来刷新视图<br>    而不是之前在 ListView 中使用 notifyDataSetChanged() 的方法。</p>
+</blockquote>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>在上述六个步骤完成后，一个简单的 RecyclerView 的 demo 也就完成了，而对于 item 之间的分隔以及添加、删除 item 的动画效果等，在这里暂不做介绍，在我进一步学习之后会有新的手记来记录这方面的知识。关于 item 的分隔，一个简单的实现的方法是在自定义的 item 布局中添加整体的 margin；而对于动画效果，有默认的样式，个人觉得效果还是不错的，不做深入研究的话是已经可以满足需求了。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/weiyushiguang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Owen Lee<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

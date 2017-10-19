@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="cn-Hans">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="申明本指南翻译自 Google Blockly 官方文档。
+
+工具箱是用户可以创建新块的侧面菜单。使用 XML 代码来指定工具箱的结构，它可能是节点树或字符串。如果您不喜欢手动输入 XML，我们建议你查看「Blockly 开发者工具」。使用「Blockly 开发者工具」，您可以构建一个工具箱，并使用">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Owen Lee">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Blockly4Android 开发指南（4）工具箱"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="海树"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Blockly4Android 开发指南（4）工具箱 - 海树</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">海树</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://image.wufazhuce.com/FnXUInbqgzohGsWF32O6KjTUBsW8')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Blockly4Android 开发指南（4）工具箱</h1>
+                    
+                    <h2 class="post-subheading">
+                        Blockly 官方文档中的 Toolbox
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-10-19
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Blockly4Android/">#Blockly4Android</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="申明"><a href="#申明" class="headerlink" title="申明"></a>申明</h3><p>本指南翻译自 Google Blockly 官方文档。</p>
+<hr>
+<p>工具箱是用户可以创建新块的侧面菜单。使用 XML 代码来指定工具箱的结构，它可能是节点树或字符串。如果您不喜欢手动输入 XML，我们建议你查看「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/blockly-developer-tools" target="_blank" rel="external">Blockly 开发者工具</a>」。使用「Blockly 开发者工具」，您可以构建一个工具箱，并使用可视化界面自动生成其工具箱 XML 代码。这个 XML 文件放在assets 目录下，其路径在 BlocklyController 构造时传递给 BlocklyController。如果您的 Activity 继承自 <a href="https://github.com/google/blockly-android/blob/master/blocklylib-core/src/main/java/com/google/blockly/android/AbstractBlocklyActivity.java" target="_blank" rel="external">AbstractBlocklyActivity</a>，则可以使用 getToolboxContentsXmlPath（）方法返回的 XML 文件路径自动完成此操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Override</div><div class="line">protected String getToolboxContentsXmlPath() &#123;</div><div class="line">    return &quot;default/toolbox.xml&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面的代码是使用节点树的一个最简实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;block type=&quot;controls_if&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;block type=&quot;controls_whileUntil&quot;&gt;&lt;/block&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
+<p>这个工具箱将加载如下的块（block）：</p>
+<p><img src="https://developers.google.cn/blockly/images/toolbox-minimal-android.png" alt="enter image description here"></p>
+<p>如果只有少量的块，那么它们可能没有任何类别显示（如上面的最简实例所示）。在这种简单模式下，所有可用的块都显示在工具箱中。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>工具箱中块可以划分成不同的类别进行组织，下面的代码中有两个类别（“控制”和“逻辑”），每个类别包含三个块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;category name=&quot;Control&quot;&gt;</div><div class="line">    &lt;block type=&quot;controls_if&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;controls_whileUntil&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;controls_for&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Logic&quot;&gt;</div><div class="line">    &lt;block type=&quot;logic_compare&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;logic_operation&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;logic_boolean&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;/category&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
+<p>以下是所产生的工具箱，点击“逻辑”类别，便可以在弹出的窗口中看到这个类别下的三个“逻辑块”：</p>
+<p><img src="https://developers.google.cn/blockly/images/toolbox-categories-android.png" alt="enter image description here"></p>
+<p>可以使用 colour 属性来为一个类别的所有块分配一个颜色。这里需注意 colour 是英国的拼写。颜色值是定义色调的数字（0-360）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;category name=&quot;Logic&quot; colour=&quot;210&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Loops&quot; colour=&quot;120&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Math&quot; colour=&quot;230&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Colour&quot; colour=&quot;20&quot;&gt;...&lt;/category&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
+<p>指定的颜色成为这个类别下的块的背景色，效果如下：</p>
+<p><img src="https://developers.google.cn/blockly/images/toolbox-colours-android.png" alt="enter image description here"></p>
+<blockquote>
+<p>标签着色正在开发，敬请期待。</p>
+</blockquote>
+<h3 id="块组（Block-Groups）"><a href="#块组（Block-Groups）" class="headerlink" title="块组（Block Groups）"></a>块组（Block Groups）</h3><p>XML 可能包含自定义块或块组。这里有四个块：</p>
+<ol>
+<li><p>一个简单的 <strong>logic_boolean</strong> 的块：<br><img src="https://developers.google.cn/blockly/images/true.png" alt="enter image description here"></p>
+</li>
+<li><p>一个已修改为显示数字 42 而不是默认值 0 的 <strong>math_number</strong> 块：<br><img src="https://developers.google.cn/blockly/images/42.png" alt="enter image description here"></p>
+</li>
+<li><p>一个具有三个math_number块连接到它的controls_for块：<br><img src="https://developers.google.cn/blockly/images/count-with.png" alt="enter image description here"></p>
+</li>
+<li><p>一个具有两个 <strong>math_number</strong> 影子块连接到它 <strong>math_arithmetic</strong> 块：<br><img src="https://developers.google.cn/blockly/images/1plus1.png" alt="enter image description here"></p>
+</li>
+</ol>
+<p>以下是生成这四个块的 XML 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;block type=&quot;logic_boolean&quot;&gt;&lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">    &lt;field name=&quot;NUM&quot;&gt;42&lt;/field&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;controls_for&quot;&gt;</div><div class="line">    &lt;value name=&quot;FROM&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;TO&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;10&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;BY&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;math_arithmetic&quot;&gt;</div><div class="line">    &lt;field name=&quot;OP&quot;&gt;ADD&lt;/field&gt;</div><div class="line">    &lt;value name=&quot;A&quot;&gt;</div><div class="line">      &lt;shadow type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/shadow&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;B&quot;&gt;</div><div class="line">      &lt;shadow type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/shadow&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
+<p>这些自定义块或组的 XML 与 Blockly 的 XML 保存格式相同。因此，为这些块构建 XML 的最简单的方法是使用「<a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" rel="external">Code application</a>」来构建块，然后切换到 XML 选项卡并复制结果。 x，y 和 id 属性被工具箱忽略，可能被删除。</p>
+<p>影子块是执行若干功能的占位符块：</p>
+<ul>
+<li>它们表示父级块的默认值。</li>
+<li>它们允许用户直接输入值，而不需要使用数字或字符串块。</li>
+<li>与常规块不同，如果用户在影子块的位置上放置块，则影子块将被替换。</li>
+<li>他们提示用户预期输入的值的类型。</li>
+</ul>
+<p>阴影块不能直接用Code应用程序构建。相反，可以使用常规块，然后将 XML 中的 <block ...=""> 和 &lt;/ block&gt; 更改为 <shadow ...=""> 和 &lt;/ shadow&gt;。</shadow></block></p>
+<h3 id="更改工具箱"><a href="#更改工具箱" class="headerlink" title="更改工具箱"></a>更改工具箱</h3><p>基于 AbstractBlocklyActivity 的应用程序可以随时通过调用 this.reloadToolbox（）来更改工具箱中可用的块。这将再次调用 getToolboxContentsXmlPath（）方法，返回一个新的值。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/weiyushiguang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Owen Lee<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

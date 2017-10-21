@@ -10,8 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="今天在使用pip install scrapy 命令安装Scrapy爬虫框架时，出现了很让人头疼的错误，错误截图如下：
-在网上查找解决方法时，大致知道了问题的原因。是因为缺少C语言的编译环境，其中一种解决方法就是安装相对应版本的Visual Studio，但是安装VS本身就极其麻烦，所以这种方法是不">
+        <meta name="description" content="在写项目时，有这样一个需求是Scrollview中嵌套一个ListView，使得ListView不可滚动，只进行item点击事件的处理，但是发现单纯的控件嵌套是无法实现预期效果的，ListView的高度会变得只有一个item的高度大小，为了解决这个问题，在网上找到一篇博客，介绍了解决方法。本人能力有">
     
 
     <!--Author-->
@@ -21,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="pip install scrapy报错解决"/>
+        <meta property="og:title" content="ScrollView与ListView滚动冲突事件解决"/>
     
 
     <!--Open Graph Description-->
@@ -43,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>pip install scrapy报错解决 - 海树</title>
+    <title>ScrollView与ListView滚动冲突事件解决 - 海树</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -134,15 +133,15 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('http://opgrjw8x2.bkt.clouddn.com/17-5-17/63445970-file_1495034471374_99af.jpg')">
+<header class="intro-header" style="background-image: url('http://image.wufazhuce.com/FnIWBJ64nrtBgfTRgMFgIZguVvWw')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>pip install scrapy报错解决</h1>
+                    <h1>ScrollView与ListView滚动冲突事件解决</h1>
                     
                     <h2 class="post-subheading">
-                        「error：Unable to find vcvarsall.bat」的解决方法
+                        解决方法转载自他人博客
                     </h2>
                     
                     <span class="meta">
@@ -168,7 +167,7 @@
                         
 
 
-<a href="/tags/Python/">#Python</a>
+<a href="/tags/Android/">#Android</a>
 
 
                     
@@ -183,14 +182,13 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>今天在使用pip install scrapy 命令安装Scrapy爬虫框架时，出现了很让人头疼的错误，错误截图如下：<br><img src="http://img.mukewang.com/58de16000001bddb09570185.png" alt="图片描述"></p>
-<p>在网上查找解决方法时，大致知道了问题的原因。是因为缺少C语言的编译环境，其中一种解决方法就是安装相对应版本的Visual Studio，但是安装VS本身就极其麻烦，所以这种方法是不推荐的。第二种方法就是下载已经编译好的安装包。</p>
-<h4 id="1-下载-whl安装包"><a href="#1-下载-whl安装包" class="headerlink" title="1. 下载.whl安装包"></a>1. 下载.whl安装包</h4><p>可以到下面这个网址中下载与python版本以及系统（32位或64位）相匹配的Twisted版本，比如我下载的就是<strong>Twisted-17.1.0-cp35-cp35m-win_amd64.whl</strong></p>
+                <p>在写项目时，有这样一个需求是Scrollview中嵌套一个ListView，使得ListView不可滚动，只进行item点击事件的处理，但是发现单纯的控件嵌套是无法实现预期效果的，ListView的高度会变得只有一个item的高度大小，为了解决这个问题，在网上找到一篇博客，介绍了解决方法。本人能力有限，只能将该方法复制过来，为之后类似的情况做个备份。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">在计算listview总高度并设置</div><div class="line">ListView listView = (ListView) findViewById(id);</div><div class="line">MyAdapter adapter = <span class="keyword">new</span> MyAdapter(<span class="string">"初始化你的适配器"</span>);</div><div class="line">listView.setAdapter(adapter);</div><div class="line">setListViewHeightBasedOnChildren(listView);(在setAdapter后调用自定义的方法)</div><div class="line"><span class="comment">//方法如下</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setListViewHeightBasedOnChildren</span><span class="params">(ListView listView)</span> </span>&#123;</div><div class="line"></div><div class="line">ListAdapter listAdapter = listView.getAdapter();</div><div class="line"><span class="keyword">if</span> (listAdapter == <span class="keyword">null</span>) &#123;</div><div class="line"><span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> totalHeight = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; listAdapter.getCount(); i++) &#123;</div><div class="line">View listItem = listAdapter.getView(i, <span class="keyword">null</span>, listView);</div><div class="line">listItem.measure(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">totalHeight += listItem.getMeasuredHeight();</div><div class="line">&#125;</div><div class="line"></div><div class="line">ViewGroup.LayoutParams params = listView.getLayoutParams();</div><div class="line">params.height = totalHeight</div><div class="line">+ (listView.getDividerHeight() * (listAdapter.getCount() - <span class="number">1</span>));</div><div class="line">listView.setLayoutParams(params);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>使用该方法需要注意：子ListView的每个Item必须是LinearLayout，不能是其他的，因为其他的Layout(如RelativeLayout)没有重写onMeasure()，所以会在onMeasure()时抛出异常。</strong></p>
+<p>最后附上博客地址：</p>
 <blockquote>
-<p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="external">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a></p>
+<p><a href="http://www.cnblogs.com/misybing/p/5046541.html" target="_blank" rel="external">http://www.cnblogs.com/misybing/p/5046541.html</a></p>
 </blockquote>
-<h4 id="2-安装下载的-whl安装包"><a href="#2-安装下载的-whl安装包" class="headerlink" title="2. 安装下载的.whl安装包"></a>2. 安装下载的.whl安装包</h4><p>在命令行中使用<strong>pip install Twisted的路径..</strong>的命令来安装Twisted</p>
-<h4 id="3-安装Scrapy"><a href="#3-安装Scrapy" class="headerlink" title="3. 安装Scrapy"></a>3. 安装Scrapy</h4><p>此时在命令行中使用<strong>pip install scrapy</strong>来安装Scrapy就会提示安装成功了。输入<strong>scrapy -h</strong>也可以看到相应使用帮助。截一下图抒发一下激动的心情。<br><img src="http://img.mukewang.com/58de19ab00012aeb06510389.png" alt="图片描述"></p>
 
 
                 

@@ -58,7 +58,7 @@
     <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
 
     <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon shortcut" type="image/ico" href="/img/fish.png">
     <link rel="icon" sizes="192x192" href="/img/favicon.png">
     <link rel="apple-touch-icon" href="/img/favicon.png">
 
@@ -303,10 +303,8 @@
                 <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
     <!-- Post Thumbnail -->
     
-        
-            <!-- Pure Thumbnail -->
-            <div class="post-thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#0097A7 !important">
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://image.wufazhuce.com/Fu1bwRKtDav7JEekZrAzdVHttezT">
     
 
         <!-- Post Title -->
@@ -337,6 +335,11 @@
         </div>
         <div id="post_entry-right-info">
           
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/想法/">想法</a>
+              </span>
+            
 
             
 
@@ -422,11 +425,11 @@
         <ul id="settings-dropdown" class="dropdown-menu">
             
                 <li>
-                    <a href="mailto:2924354040@qq.com" target="_blank" title="Email Me">
+                    <a href="mailto:2924354040@qq.com" target="_blank" title="给我发邮件">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
                         
-                        Email Me
+                        给我发邮件
                     </a>
                 </li>
             
@@ -476,20 +479,36 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                
+                <a class="sidebar_archives-link" href="/categories/想法/">想法<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/">技术<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/译文/">译文<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
+        
+            <li class="divider"></li>
         
     
 
     <!-- Pages  -->
     
         <li>
-            <a href="/2017/10/20/about-me/" title="About">
+            <a href="/2017/10/20/about-me/" title="关于我">
                 
-                    <i class="material-icons sidebar-material-icons">person</i>
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags/" title="标签云">
                 
-                About
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline/" title="时间轴">
+                
+                时间轴
             </a>
         </li>
         
@@ -513,17 +532,8 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Sidebar Divider -->
 
-    <div class="sidebar-divider"></div>
-
 
 <!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
 
 
 <!-- Help & Support -->

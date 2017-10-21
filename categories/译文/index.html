@@ -37,7 +37,7 @@
     
     <title>
         
-            Blockly4Android 开发指南（4）工具箱 | 
+            分类: 译文 | 
         
         海树
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Owen Lee">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,Blockly4Android">
+    <meta name="keywords" content="null">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Blockly4Android 开发指南（4）工具箱 | 海树">
+    <meta property="og:title" content="分类: 译文 | 海树">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Blockly4Android"> 
-
     
-        <meta property="article:published_time" content="Thu Oct 19 2017 22:26:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Oct 21 2017 22:45:13 GMT+0800" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Blockly4Android 开发指南（4）工具箱 | 海树">
+    <meta name="twitter:title" content="分类: 译文 | 海树">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,43 +247,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" />
+        <link rel="canonical" href="http://yoursite.com/categories/译文/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html",
-    "headline": "Blockly4Android 开发指南（4）工具箱",
-    "datePublished": "Thu Oct 19 2017 22:26:00 GMT+0800",
-    "dateModified": "Sat Oct 21 2017 22:45:13 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Owen Lee",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/icon.jpg"
-        },
-        "description": "我心有猛虎  细嗅蔷薇香"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "海树",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": ",Blockly4Androidnull",
-    "description": "",
-}
-</script>
 
 
     
@@ -320,278 +287,281 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#申明"><span class="post-toc-number">1.</span> <span class="post-toc-text">申明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块组（Block-Groups）"><span class="post-toc-number">3.</span> <span class="post-toc-text">块组（Block Groups）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更改工具箱"><span class="post-toc-number">4.</span> <span class="post-toc-text">更改工具箱</span></a></li></ol>
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FnXUInbqgzohGsWF32O6KjTUBsW8)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://image.wufazhuce.com/FnXUInbqgzohGsWF32O6KjTUBsW8">
     
-            <p class="article-headline-p">
-                Blockly4Android 开发指南（4）工具箱
-            </p>
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/19/blockly4android-4-toolbox/">Blockly4Android 开发指南（4）工具箱</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            申明本指南翻译自 Google Blockly 官方文档。
+
+工具箱是用户可...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/19/blockly4android-4-toolbox/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/icon.jpg" width="44px" height="44px" alt="Owen Lee's avatar">
+            </div>
+            <div>
+                <strong>Owen Lee</strong>
+                <span>10月 19, 2017</span>
+            </div>
         </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/译文/">译文</a>
+              </span>
+            
 
+            
 
+            
 
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/icon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Owen Lee</strong>
-        <span>10月 19, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/">
-    
-</ul>
-
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Blockly4Android/">Blockly4Android</a>
-    </ul>
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Blockly4Android 开发指南（4）工具箱&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Blockly4Android 开发指南（4）工具箱&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html&via=Owen Lee" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Blockly4Android 开发指南（4）工具箱&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
 </div>
 
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+            
+            
+        
     
-        <h3 id="申明"><a href="#申明" class="headerlink" title="申明"></a>申明</h3><p>本指南翻译自 Google Blockly 官方文档。</p>
-<hr>
-<p>工具箱是用户可以创建新块的侧面菜单。使用 XML 代码来指定工具箱的结构，它可能是节点树或字符串。如果您不喜欢手动输入 XML，我们建议你查看「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/blockly-developer-tools" target="_blank" rel="external">Blockly 开发者工具</a>」。使用「Blockly 开发者工具」，您可以构建一个工具箱，并使用可视化界面自动生成其工具箱 XML 代码。这个 XML 文件放在assets 目录下，其路径在 BlocklyController 构造时传递给 BlocklyController。如果您的 Activity 继承自 <a href="https://github.com/google/blockly-android/blob/master/blocklylib-core/src/main/java/com/google/blockly/android/AbstractBlocklyActivity.java" target="_blank" rel="external">AbstractBlocklyActivity</a>，则可以使用 getToolboxContentsXmlPath（）方法返回的 XML 文件路径自动完成此操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Override</div><div class="line">protected String getToolboxContentsXmlPath() &#123;</div><div class="line">    return &quot;default/toolbox.xml&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>下面的代码是使用节点树的一个最简实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;block type=&quot;controls_if&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;block type=&quot;controls_whileUntil&quot;&gt;&lt;/block&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>这个工具箱将加载如下的块（block）：</p>
-<p><img src="https://developers.google.cn/blockly/images/toolbox-minimal-android.png" alt="enter image description here"></p>
-<p>如果只有少量的块，那么它们可能没有任何类别显示（如上面的最简实例所示）。在这种简单模式下，所有可用的块都显示在工具箱中。</p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>工具箱中块可以划分成不同的类别进行组织，下面的代码中有两个类别（“控制”和“逻辑”），每个类别包含三个块：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;category name=&quot;Control&quot;&gt;</div><div class="line">    &lt;block type=&quot;controls_if&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;controls_whileUntil&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;controls_for&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Logic&quot;&gt;</div><div class="line">    &lt;block type=&quot;logic_compare&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;logic_operation&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;logic_boolean&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;/category&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>以下是所产生的工具箱，点击“逻辑”类别，便可以在弹出的窗口中看到这个类别下的三个“逻辑块”：</p>
-<p><img src="https://developers.google.cn/blockly/images/toolbox-categories-android.png" alt="enter image description here"></p>
-<p>可以使用 colour 属性来为一个类别的所有块分配一个颜色。这里需注意 colour 是英国的拼写。颜色值是定义色调的数字（0-360）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;category name=&quot;Logic&quot; colour=&quot;210&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Loops&quot; colour=&quot;120&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Math&quot; colour=&quot;230&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Colour&quot; colour=&quot;20&quot;&gt;...&lt;/category&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>指定的颜色成为这个类别下的块的背景色，效果如下：</p>
-<p><img src="https://developers.google.cn/blockly/images/toolbox-colours-android.png" alt="enter image description here"></p>
-<blockquote>
-<p>标签着色正在开发，敬请期待。</p>
-</blockquote>
-<h3 id="块组（Block-Groups）"><a href="#块组（Block-Groups）" class="headerlink" title="块组（Block Groups）"></a>块组（Block Groups）</h3><p>XML 可能包含自定义块或块组。这里有四个块：</p>
-<ol>
-<li><p>一个简单的 <strong>logic_boolean</strong> 的块：<br><img src="https://developers.google.cn/blockly/images/true.png" alt="enter image description here"></p>
-</li>
-<li><p>一个已修改为显示数字 42 而不是默认值 0 的 <strong>math_number</strong> 块：<br><img src="https://developers.google.cn/blockly/images/42.png" alt="enter image description here"></p>
-</li>
-<li><p>一个具有三个math_number块连接到它的controls_for块：<br><img src="https://developers.google.cn/blockly/images/count-with.png" alt="enter image description here"></p>
-</li>
-<li><p>一个具有两个 <strong>math_number</strong> 影子块连接到它 <strong>math_arithmetic</strong> 块：<br><img src="https://developers.google.cn/blockly/images/1plus1.png" alt="enter image description here"></p>
-</li>
-</ol>
-<p>以下是生成这四个块的 XML 代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;block type=&quot;logic_boolean&quot;&gt;&lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">    &lt;field name=&quot;NUM&quot;&gt;42&lt;/field&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;controls_for&quot;&gt;</div><div class="line">    &lt;value name=&quot;FROM&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;TO&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;10&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;BY&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;math_arithmetic&quot;&gt;</div><div class="line">    &lt;field name=&quot;OP&quot;&gt;ADD&lt;/field&gt;</div><div class="line">    &lt;value name=&quot;A&quot;&gt;</div><div class="line">      &lt;shadow type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/shadow&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;B&quot;&gt;</div><div class="line">      &lt;shadow type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/shadow&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>这些自定义块或组的 XML 与 Blockly 的 XML 保存格式相同。因此，为这些块构建 XML 的最简单的方法是使用「<a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" rel="external">Code application</a>」来构建块，然后切换到 XML 选项卡并复制结果。 x，y 和 id 属性被工具箱忽略，可能被删除。</p>
-<p>影子块是执行若干功能的占位符块：</p>
-<ul>
-<li>它们表示父级块的默认值。</li>
-<li>它们允许用户直接输入值，而不需要使用数字或字符串块。</li>
-<li>与常规块不同，如果用户在影子块的位置上放置块，则影子块将被替换。</li>
-<li>他们提示用户预期输入的值的类型。</li>
-</ul>
-<p>阴影块不能直接用Code应用程序构建。相反，可以使用常规块，然后将 XML 中的 <block ...=""> 和 &lt;/ block&gt; 更改为 <shadow ...=""> 和 &lt;/ shadow&gt;。</shadow></block></p>
-<h3 id="更改工具箱"><a href="#更改工具箱" class="headerlink" title="更改工具箱"></a>更改工具箱</h3><p>基于 AbstractBlocklyActivity 的应用程序可以随时通过调用 this.reloadToolbox（）来更改工具箱中可用的块。这将再次调用 getToolboxContentsXmlPath（）方法，返回一个新的值。</p>
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://image.wufazhuce.com/FlClKq2eSOZO3zvYc4uZSDYkYFTU">
+    
 
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/18/blockly4android-3-add-custom-block/">Blockly4Android 开发指南（3）添加自定义块</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            申明本指南翻译自 BLockly 官方文档。
+
+Blockly 中的块由三部...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/18/blockly4android-3-add-custom-block/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/icon.jpg" width="44px" height="44px" alt="Owen Lee's avatar">
+            </div>
+            <div>
+                <strong>Owen Lee</strong>
+                <span>10月 18, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/译文/">译文</a>
+              </span>
+            
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://image.wufazhuce.com/FrkK_wENKb7emv-OTFGkNN0TVbYf">
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/16/blockly4android-2-get-start/">Blockly4Android 开发指南（2）开始使用 Blockly</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            申明本文翻译自Google Blockly 官方文档。
+
+这份指南适用于那些...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/16/blockly4android-2-get-start/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/icon.jpg" width="44px" height="44px" alt="Owen Lee's avatar">
+            </div>
+            <div>
+                <strong>Owen Lee</strong>
+                <span>10月 16, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/译文/">译文</a>
+              </span>
+            
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://image.wufazhuce.com/FrUWn0mdckLL1xMVOShHa_UirhDl">
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/15/blockly4android-1-overview/">Blockly4Android 开发指南（1） Blockly 概述</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            申明本指南翻译自 Blockly 官方文档。
+
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/15/blockly4android-1-overview/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/icon.jpg" width="44px" height="44px" alt="Owen Lee's avatar">
+            </div>
+            <div>
+                <strong>Owen Lee</strong>
+                <span>10月 15, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/译文/">译文</a>
+              </span>
+            
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
         
     
 
     
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
 </div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/10/19/know-about-recyclerview/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/10/19/android-network-4-webview-more/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     

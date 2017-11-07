@@ -37,7 +37,7 @@
     
     <title>
         
-            Android 6.0 动态申请权限 | 
+            Blockly4Android 开发指南（8） Blockly 开发者工具 | 
         
         海树
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Owen Lee">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,Android">
+    <meta name="keywords" content="null,Blockly4Android">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android 6.0 动态申请权限 | 海树">
+    <meta property="og:title" content="Blockly4Android 开发指南（8） Blockly 开发者工具 | 海树">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Android"> 
+    <meta property="og:article:tag" content="Blockly4Android"> 
 
     
-        <meta property="article:published_time" content="Sun Oct 22 2017 12:10:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Oct 22 2017 22:39:15 GMT+0800" />
+        <meta property="article:published_time" content="Tue Nov 07 2017 21:38:00 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 07 2017 21:39:18 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Android 6.0 动态申请权限 | 海树">
+    <meta name="twitter:title" content="Blockly4Android 开发指南（8） Blockly 开发者工具 | 海树">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/10/22/android-permission/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/10/22/android-permission/index.html",
-    "headline": "Android 6.0 动态申请权限",
-    "datePublished": "Sun Oct 22 2017 12:10:00 GMT+0800",
-    "dateModified": "Sun Oct 22 2017 22:39:15 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html",
+    "headline": "Blockly4Android 开发指南（8） Blockly 开发者工具",
+    "datePublished": "Tue Nov 07 2017 21:38:00 GMT+0800",
+    "dateModified": "Tue Nov 07 2017 21:39:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Owen Lee",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Androidnull",
+    "keywords": ",Blockly4Androidnull",
     "description": "",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通权限和危险权限"><span class="post-toc-number">2.</span> <span class="post-toc-text">普通权限和危险权限</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动态申请权限过程"><span class="post-toc-number">3.</span> <span class="post-toc-text">动态申请权限过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结束语"><span class="post-toc-number">4.</span> <span class="post-toc-text">结束语</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#申明"><span class="post-toc-number">1.</span> <span class="post-toc-text">申明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块工厂选项卡"><span class="post-toc-number">2.</span> <span class="post-toc-text">块工厂选项卡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定义块"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">定义块</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#管理库"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">管理库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#导入导出库"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">导入导出库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块导出器选项卡"><span class="post-toc-number">3.</span> <span class="post-toc-text">块导出器选项卡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#块选择器"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">块选择器</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工作区工厂选项卡"><span class="post-toc-number">4.</span> <span class="post-toc-text">工作区工厂选项卡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构建工具箱"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">构建工具箱</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#无分类的工具箱"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">无分类的工具箱</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有分类的工具箱"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">有分类的工具箱</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高级块"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">高级块</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置工作区（对于-Web-版-Blockly）"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">配置工作区（对于 Web 版 Blockly）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#导出"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">导出</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -369,10 +369,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://opgrjw8x2.bkt.clouddn.com/17-10-22/29150542.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/Fg-VWBrkD3lebDcwXJu3l9Rkgfx7)">
     
             <p class="article-headline-p">
-                Android 6.0 动态申请权限
+                Blockly4Android 开发指南（8） Blockly 开发者工具
             </p>
         </div>
 
@@ -391,7 +391,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Owen Lee</strong>
-        <span>10月 22, 2017</span>
+        <span>11月 07, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -415,7 +415,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Android/">Android</a>
+        <a class="post_tag-link" href="/tags/Blockly4Android/">Blockly4Android</a>
     </ul>
     
 
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android 6.0 动态申请权限&url=http://yoursite.com/2017/10/22/android-permission/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Blockly4Android 开发指南（8） Blockly 开发者工具&url=http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android 6.0 动态申请权限&url=http://yoursite.com/2017/10/22/android-permission/index.html&via=Owen Lee" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Blockly4Android 开发指南（8） Blockly 开发者工具&url=http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html&via=Owen Lee" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/22/android-permission/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/22/android-permission/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Android 6.0 动态申请权限&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/10/22/android-permission/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Blockly4Android 开发指南（8） Blockly 开发者工具&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/11/07/blockly4android-8-blockly-developer-tool/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,34 +490,67 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在 Android 6.0 之前，我们进行权限申请只需要在 AndroidManifest.xml 文件中使用 &lt; uses-permission &gt; 标签列出需要的权限名称即可。比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</div></pre></td></tr></table></figure>
-<p>这样做对于开发人员来讲是便捷的，但对用户来讲却是存在隐患的。现在的很多应用都存在着胡乱申请权限的现象，也不管这些权限用没用到，如果用户不同意这些不合理的权限就直接不能安装这款应用。通常情况下，普通用户都不会非常关注所安装应用的权限情况，这就让应用有了获取用户手机隐私的可能。</p>
-<p>为了弥补这个隐患，在 Android 6.0 就推出了动态权限的概念，即光在 AndroidManifest.xml 文件申明了某项权限还不够，在应用运行过程中，用户的某个操作需要这个权限的支持时，需要提示用户是否允许这个权限。用户可以随意选择允许或者拒绝这个权限的申请。如果用户拒绝了该权限的申请，下次需要这个权限时，还是会提示用户进行选择。这样用户就可以拒绝掉一些不合理的、可能涉及隐私的权限，从而提高了安全性。</p>
-<p>这篇文章，我们就来介绍一下动态申请权限的相关知识。</p>
-<h3 id="普通权限和危险权限"><a href="#普通权限和危险权限" class="headerlink" title="普通权限和危险权限"></a>普通权限和危险权限</h3><p>在推出动态权限的概念时，Google 将我们手机上所用到的权限按照对用户的安全性划分程两类，普通权限和危险权限。普通权限是指不涉及用户个人隐私信息的权限，如网络权限、手机震动权限等。危险权限即那些涉及用户隐私信息的权限，如获取手机联系人权限、打电话权限、定位权限等。普通权限只需要在 AndroidManifest.xml 文件中进行申明即可，危险权限则需要动态申请。毕竟如果所有的权限都要动态申请的话，也太麻烦了。</p>
-<p>Android 中的危险权限共有 24 个，分为 9 组，其余的都是普通权限。</p>
-<p>下图列出了所有的危险权限：</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-10-22/30390863.jpg" alt="dangerous permission"></p>
-<p>当用户动态授权了某一个权限组中的一个危险权限，同组的所有危险权限都会自动被授权。免去了重复申请的繁杂。</p>
-<h3 id="动态申请权限过程"><a href="#动态申请权限过程" class="headerlink" title="动态申请权限过程"></a>动态申请权限过程</h3><p>动态申请危险权限的过程如以下流程图所示：</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-10-22/30707622.jpg" alt="flow"></p>
-<p>下面我们以打电话为例，用代码来看看每步的内容。假设页面上有一个按钮，点击按钮就可以拨打电话，我们可以用隐式 Intent 来实现直接拨打电话的功能，不过需要 CALL_PHONE 这个权限的支持，而这个权限是一个危险权限。</p>
-<ol>
-<li>在 AndroidManifest.xml 文件中申明权限。这个步骤还是必须的，因为我们的应用需要适配 6.0 以下版本的机型。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.CALL_PHONE&quot;/&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>运行时判断某个权限是否已经被授权。本来我们在按钮的点击事件中只需要调用一个我们自己写的函数 callPhone() 即可，但现在必须加以判断，如果用户之前已经授权过 CALL_PHONE 这个权限，就调用 callPhone()  函数，如果还未被授权，则需去申请这个权限。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">btnCall = findViewById(R.id.main_call);</div><div class="line">btnCall.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override</div><div class="line">    public void onClick(View view) &#123;</div><div class="line">        if(ContextCompat.checkSelfPermission(MainActivity.this,</div><div class="line">                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)&#123;</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.this,</div><div class="line">                    new String[] &#123;Manifest.permission.CALL_PHONE&#125;,1);</div><div class="line">        &#125; else &#123;</div><div class="line">            callPhone();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">private void callPhone() &#123;</div><div class="line">    try&#123;</div><div class="line">        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(&quot;tel:1008611&quot;));</div><div class="line">        startActivity(intent);</div><div class="line">    &#125; catch (SecurityException e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>弹出提示框让用户选择授权还是拒绝授权，用户选择后会回调 onRequestPermissionsResult() 方法，在这个方法中可以获取用户选择结果。如果用户授权 CALL_PHONE 权限，就再调用 callPhone() 方法，如果用户拒绝了该权限，则打印一些提示告知用户。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Override</div><div class="line">public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123;</div><div class="line">    switch (requestCode)&#123;</div><div class="line">        case 1:</div><div class="line">            if(grantResults.length &gt; 0 &amp;&amp;</div><div class="line">                    grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123;</div><div class="line">                callPhone();</div><div class="line">            &#125;else&#123;</div><div class="line">	            Toast.makeText(MainActivity.this, &quot;你拒绝了权限申请&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">		    &#125;</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>用户同时也可以在设置 → 权限管理中找到某个应用，查看该应用所申请的所有权限，然后自行选择开启或关闭这些权限。关闭后，应用运行时需要某个危险权限的支持，还会重复上述几个步骤，请用户再次授权。</p>
-<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>这篇文章中简单介绍了运行时权限的概念和使用过程。 Github 上也有一些封装好的动态权限申请的第三方库，可以帮助我们更加简单地进行权限申请。如果想了解更多的相关知识，可以去看看这些开源库的源码实现。</p>
+        <h3 id="申明"><a href="#申明" class="headerlink" title="申明"></a>申明</h3><p>本指南翻译自 Google Blockly 官方文档。</p>
+<hr>
+<p>「<a href="https://blockly-demo.appspot.com/static/demos/blockfactory/index.html" target="_blank" rel="external">Blockly 开发者工具</a>」是一个自动部署 Blockly 配置过程的基于 web 的开发者工具，包括创建自定义块，构建工具箱以及配置 Web Blockly工作区。</p>
+<p>使用该工具的流程分成三部分：</p>
+<ul>
+<li>使用「块工厂 Block Factory」和「块导出器 Block Exporter」建自定义块。</li>
+<li>使用「工作区工厂 Workspace Factory」构建工具箱和默认工作区。</li>
+<li>使用工作区工厂（当前只有 Web 版具备此功能）配置工作区。</li>
+</ul>
+<h3 id="块工厂选项卡"><a href="#块工厂选项卡" class="headerlink" title="块工厂选项卡"></a>块工厂选项卡</h3><p>「块工厂选项卡」中可帮助你为自定义块创建「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/define-blocks" target="_blank" rel="external">块定义</a>」和「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/generating-code" target="_blank" rel="external">代码生成器</a>」。在此选项卡上，您可以轻松地创建，修改和保存自定义块。</p>
+<h4 id="定义块"><a href="#定义块" class="headerlink" title="定义块"></a>定义块</h4><p>本视频详细介绍了定义块的步骤。 UI 是过时的，但其重点的块功能仍然准确。</p>
+<blockquote>
+<p>译者注：因为无法科学上网，所以暂无视频。</p>
+</blockquote>
+<p><img src="https://developers.google.cn/blockly/images/update_button.png" alt="enter image description here"></p>
+<h4 id="管理库"><a href="#管理库" class="headerlink" title="管理库"></a>管理库</h4><p>你可以在先前保存的块之间进行切换，也可以通过单击库中的按钮创建新的空块。更改现有块的名称是快速创建具有类似定义的多个块的另一种方法。</p>
+<p><img src="https://developers.google.cn/blockly/images/blocklib_button.png" alt="enter image description here"></p>
+<h4 id="导入导出库"><a href="#导入导出库" class="headerlink" title="导入导出库"></a>导入导出库</h4><p>定义好的块被保存到浏览器的本地存储中清除浏览器的本地存储将删除你的块。想要无限期地保存块，你必须下载你的库。你的块库被下载为可以导入的 XML 文件，以将 Block Library 设置为下载文件时的状态。请注意，导入块库将替换当前库，因此您可能希望先导出。</p>
+<p><img src="https://developers.google.cn/blockly/images/block_manage_buttons.png" alt="enter image description here"></p>
+<h3 id="块导出器选项卡"><a href="#块导出器选项卡" class="headerlink" title="块导出器选项卡"></a>块导出器选项卡</h3><p>当你设计好你的块后，你需要在「块导出器选项卡」上完成导出这些块的块定义和发生器存根，以便在应用程序中使用它们。</p>
+<p>保存在你块库中的所有块都会展示在「块选择器 Block Selector」中，点击块选择是否导出这个块。如果想选中库中所有块，可以通过「选择」→「库中所有块」来实现。如果你使用「工作区工厂选项卡」构建了工具箱或配置了工作区，也可以通过单击「选择」→「工作区工厂中所有块」来选择所使用的所有块。</p>
+<h4 id="块选择器"><a href="#块选择器" class="headerlink" title="块选择器"></a>块选择器</h4><p><img src="https://developers.google.cn/blockly/images/block_exporter_select.png" alt="enter image description here"></p>
+<p>通过导出设置，你可以选择要生成的目标语言以及是否需要所选块的块定义，生成器存根。当你选择了这些后，点击「导出」下载你的文件。</p>
+<p><img src="https://developers.google.cn/blockly/images/block_exporter_tab.png" alt="enter image description here"></p>
+<blockquote>
+<p>注意：如果在 Mac 上使用保存对话框，则一次只能下载一个文件</p>
+</blockquote>
+<h3 id="工作区工厂选项卡"><a href="#工作区工厂选项卡" class="headerlink" title="工作区工厂选项卡"></a>工作区工厂选项卡</h3><p>工作区工厂可以轻松配置工具箱和工作区中的默认块。你可以在「工具箱」和「工作区」按钮之间切换来编辑工具箱和起始工作区。</p>
+<p><img src="https://developers.google.cn/blockly/images/ws_fac_tb_ws_buttons.png" alt="enter image description here"></p>
+<h4 id="构建工具箱"><a href="#构建工具箱" class="headerlink" title="构建工具箱"></a>构建工具箱</h4><p>这个选项卡帮助构建工具箱的 XML 表示。你需要先熟悉「工具箱」的功能。如果你已经在此处编辑了一个工具箱的XML表示，则可以通过单击「加载到编辑」加载它。</p>
+<h4 id="无分类的工具箱"><a href="#无分类的工具箱" class="headerlink" title="无分类的工具箱"></a>无分类的工具箱</h4><p>如果你只有少数几个块并且不想分类来展示这些块，只需将它们拖拽到工作区，你就能在预览中看到你的块出现在工具箱中。</p>
+<p><img src="https://developers.google.cn/blockly/images/workspace_fac_no_cat.png" alt="enter image description here"></p>
+<h4 id="有分类的工具箱"><a href="#有分类的工具箱" class="headerlink" title="有分类的工具箱"></a>有分类的工具箱</h4><p>如果你想将你的块分类展示，请单击「+」按钮，在下拉菜单中选择一项作为新的类别。这将添加一个类别到您的类别列表，你可以选择和编辑。选择“标准类别”添加一个单独的标准块类别（逻辑，循环等）或选择「标准工具箱」添加所有标准块类别。使用箭头按钮重新排列类别。</p>
+<p><img src="https://developers.google.cn/blockly/images/category_menu.png" alt="enter image description here"></p>
+<blockquote>
+<p>注意：标准类别和工具箱包含了<a href="https://blockly-demo.appspot.com/static/tests/playground.html" target="_blank" rel="external">「Playground」</a>中的所有块。这组块不适合大多数应用程序，应根据需要修剪。此外，一些块在手机上还不支持。</p>
+</blockquote>
+<p>要更改所选类别的名称或颜色，可以使用「编辑类别」下拉菜单。将块拖动到工作区将会将其添加到选定的类别。</p>
+<p><img src="https://developers.google.cn/blockly/images/edit_category.png" alt="enter image description here"></p>
+<h4 id="高级块"><a href="#高级块" class="headerlink" title="高级块"></a>高级块</h4><p>默认情况下，可以将库中的任何标准块或块添加到工具箱中。如果你在 JSON 中定义的块不在库中，则可以使用“导入自定义块”按钮导入它们。</p>
+<p>一些块应该一起使用或包含默认值。这是使用<a href="https://developers.google.cn/blockly/guides/configure/web/toolbox#block_groups" target="_blank" rel="external">「块组groups」和「影子块 shadows」</a>来完成的。在编辑器中相互连接的任何块将作为一个块组添加到工具箱中。附加到另一个块上的块可以通过选择子块并单击「制作阴影」按钮，将这个块更改为阴影块。注意：只有不包含变量的子块可以更改为影子块。</p>
+<p>如果工具箱中包含了【变量】或【函数】块，请在工具箱中包含“变量”或“函数”类别，以便用户充分利用该块。详细了解<a href="https://developers.google.cn/blockly/guides/configure/web/toolbox#categories" target="_blank" rel="external">「变量」或「函数」类别</a>。</p>
+<h4 id="配置工作区（对于-Web-版-Blockly）"><a href="#配置工作区（对于-Web-版-Blockly）" class="headerlink" title="配置工作区（对于 Web 版 Blockly）"></a>配置工作区（对于 Web 版 Blockly）</h4><p>要配置工作区的不同部分，请转到「工作区工厂选项卡」并选择「工作区」。</p>
+<p><strong>选择工作区选项</strong></p>
+<p>为<a href="https://developers.google.cn/blockly/guides/get-started/web#configuration" target="_blank" rel="external">配置选项</a>设置不同的值，并在预览区域查看结果。启用「<a href="https://developers.google.cn/blockly/guides/configure/web/grid" target="_blank" rel="external">网格</a>」或<a href="https://developers.google.cn/blockly/guides/configure/web/zoom" target="_blank" rel="external">「缩放」</a>显示更多的配置选项。而且，切换到使用类别通常需要更复杂的工作空间;当你添加第一个类别时，会自动添加垃圾箱和滚动条。</p>
+<p><img src="https://developers.google.cn/blockly/images/configure_workspace.png" alt="enter image description here"></p>
+<p><strong>添加预加载的块到工作区</strong></p>
+<p>这是可选的，但如果要在工作空间中显示一组块，则可能需要：</p>
+<ul>
+<li>当应用程序加载</li>
+<li>当一个事件（推进一个级别，点击一个帮助按钮等）被触发。</li>
+</ul>
+<p>将块拖动到编辑空间中以便在预览中的工作空间中查看它们。您可以创建组，禁用块，并将某些特定块变为阴影块。</p>
+<p><img src="https://developers.google.cn/blockly/images/load_workspace_blocks.png" alt="enter image description here"></p>
+<h4 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h4><p>工作区工厂为您提供以下导出选项：</p>
+<p><img src="https://developers.google.cn/blockly/images/workspace_export_opt.png" alt="enter image description here"></p>
+<ul>
+<li>初学者代码：产生初学者 html 和 javascript 来注入你自定义的 Blockly 工作区。 </li>
+<li>工具箱：生成 XML 表示来指定你的工具箱。 </li>
+<li>工作空间块：产生可以加载到工作空间的 XML 表示。</li>
+</ul>
 
         
     
@@ -538,21 +571,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/22/blockly4android-5-use-custom-js-generators/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/21/android-network-5-httpurlconnection/" id="post_nav-older" class="next-content">
+        <a href="/2017/10/26/poem-1/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

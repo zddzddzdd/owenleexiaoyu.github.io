@@ -37,7 +37,7 @@
     
     <title>
         
-            Android 6.0 动态申请权限 | 
+            归档: 2017/11 | 
         
         海树
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Owen Lee">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,Android">
+    <meta name="keywords" content="null">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android 6.0 动态申请权限 | 海树">
+    <meta property="og:title" content="归档: 2017/11 | 海树">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Android"> 
-
     
-        <meta property="article:published_time" content="Sun Oct 22 2017 12:10:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Oct 22 2017 22:39:15 GMT+0800" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Android 6.0 动态申请权限 | 海树">
+    <meta name="twitter:title" content="归档: 2017/11 | 海树">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,43 +247,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/10/22/android-permission/index.html" />
+        <link rel="canonical" href="http://yoursite.com/archives/2017/11/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/10/22/android-permission/index.html",
-    "headline": "Android 6.0 动态申请权限",
-    "datePublished": "Sun Oct 22 2017 12:10:00 GMT+0800",
-    "dateModified": "Sun Oct 22 2017 22:39:15 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Owen Lee",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/icon.jpg"
-        },
-        "description": "我心有猛虎  细嗅蔷薇香"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "海树",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": ",Androidnull",
-    "description": "",
-}
-</script>
 
 
     
@@ -320,251 +287,98 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通权限和危险权限"><span class="post-toc-number">2.</span> <span class="post-toc-text">普通权限和危险权限</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动态申请权限过程"><span class="post-toc-number">3.</span> <span class="post-toc-text">动态申请权限过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结束语"><span class="post-toc-number">4.</span> <span class="post-toc-text">结束语</span></a></li></ol>
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://opgrjw8x2.bkt.clouddn.com/17-10-22/29150542.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://image.wufazhuce.com/Fg-VWBrkD3lebDcwXJu3l9Rkgfx7">
     
-            <p class="article-headline-p">
-                Android 6.0 动态申请权限
-            </p>
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/11/07/blockly4android-8-blockly-developer-tool/">Blockly4Android 开发指南（8） Blockly 开发者工具</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            申明本指南翻译自 Google Blockly 官方文档。
+
+「
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/11/07/blockly4android-8-blockly-developer-tool/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/icon.jpg" width="44px" height="44px" alt="Owen Lee's avatar">
+            </div>
+            <div>
+                <strong>Owen Lee</strong>
+                <span>11月 07, 2017</span>
+            </div>
         </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/译文/">译文</a>
+              </span>
+            
 
+            
 
+            
 
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/icon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Owen Lee</strong>
-        <span>10月 22, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Android/">Android</a>
-    </ul>
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android 6.0 动态申请权限&url=http://yoursite.com/2017/10/22/android-permission/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android 6.0 动态申请权限&url=http://yoursite.com/2017/10/22/android-permission/index.html&via=Owen Lee" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/22/android-permission/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/22/android-permission/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Android 6.0 动态申请权限&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/10/22/android-permission/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
 </div>
 
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在 Android 6.0 之前，我们进行权限申请只需要在 AndroidManifest.xml 文件中使用 &lt; uses-permission &gt; 标签列出需要的权限名称即可。比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</div></pre></td></tr></table></figure>
-<p>这样做对于开发人员来讲是便捷的，但对用户来讲却是存在隐患的。现在的很多应用都存在着胡乱申请权限的现象，也不管这些权限用没用到，如果用户不同意这些不合理的权限就直接不能安装这款应用。通常情况下，普通用户都不会非常关注所安装应用的权限情况，这就让应用有了获取用户手机隐私的可能。</p>
-<p>为了弥补这个隐患，在 Android 6.0 就推出了动态权限的概念，即光在 AndroidManifest.xml 文件申明了某项权限还不够，在应用运行过程中，用户的某个操作需要这个权限的支持时，需要提示用户是否允许这个权限。用户可以随意选择允许或者拒绝这个权限的申请。如果用户拒绝了该权限的申请，下次需要这个权限时，还是会提示用户进行选择。这样用户就可以拒绝掉一些不合理的、可能涉及隐私的权限，从而提高了安全性。</p>
-<p>这篇文章，我们就来介绍一下动态申请权限的相关知识。</p>
-<h3 id="普通权限和危险权限"><a href="#普通权限和危险权限" class="headerlink" title="普通权限和危险权限"></a>普通权限和危险权限</h3><p>在推出动态权限的概念时，Google 将我们手机上所用到的权限按照对用户的安全性划分程两类，普通权限和危险权限。普通权限是指不涉及用户个人隐私信息的权限，如网络权限、手机震动权限等。危险权限即那些涉及用户隐私信息的权限，如获取手机联系人权限、打电话权限、定位权限等。普通权限只需要在 AndroidManifest.xml 文件中进行申明即可，危险权限则需要动态申请。毕竟如果所有的权限都要动态申请的话，也太麻烦了。</p>
-<p>Android 中的危险权限共有 24 个，分为 9 组，其余的都是普通权限。</p>
-<p>下图列出了所有的危险权限：</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-10-22/30390863.jpg" alt="dangerous permission"></p>
-<p>当用户动态授权了某一个权限组中的一个危险权限，同组的所有危险权限都会自动被授权。免去了重复申请的繁杂。</p>
-<h3 id="动态申请权限过程"><a href="#动态申请权限过程" class="headerlink" title="动态申请权限过程"></a>动态申请权限过程</h3><p>动态申请危险权限的过程如以下流程图所示：</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-10-22/30707622.jpg" alt="flow"></p>
-<p>下面我们以打电话为例，用代码来看看每步的内容。假设页面上有一个按钮，点击按钮就可以拨打电话，我们可以用隐式 Intent 来实现直接拨打电话的功能，不过需要 CALL_PHONE 这个权限的支持，而这个权限是一个危险权限。</p>
-<ol>
-<li>在 AndroidManifest.xml 文件中申明权限。这个步骤还是必须的，因为我们的应用需要适配 6.0 以下版本的机型。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.CALL_PHONE&quot;/&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>运行时判断某个权限是否已经被授权。本来我们在按钮的点击事件中只需要调用一个我们自己写的函数 callPhone() 即可，但现在必须加以判断，如果用户之前已经授权过 CALL_PHONE 这个权限，就调用 callPhone()  函数，如果还未被授权，则需去申请这个权限。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">btnCall = findViewById(R.id.main_call);</div><div class="line">btnCall.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override</div><div class="line">    public void onClick(View view) &#123;</div><div class="line">        if(ContextCompat.checkSelfPermission(MainActivity.this,</div><div class="line">                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)&#123;</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.this,</div><div class="line">                    new String[] &#123;Manifest.permission.CALL_PHONE&#125;,1);</div><div class="line">        &#125; else &#123;</div><div class="line">            callPhone();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">private void callPhone() &#123;</div><div class="line">    try&#123;</div><div class="line">        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(&quot;tel:1008611&quot;));</div><div class="line">        startActivity(intent);</div><div class="line">    &#125; catch (SecurityException e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>弹出提示框让用户选择授权还是拒绝授权，用户选择后会回调 onRequestPermissionsResult() 方法，在这个方法中可以获取用户选择结果。如果用户授权 CALL_PHONE 权限，就再调用 callPhone() 方法，如果用户拒绝了该权限，则打印一些提示告知用户。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Override</div><div class="line">public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123;</div><div class="line">    switch (requestCode)&#123;</div><div class="line">        case 1:</div><div class="line">            if(grantResults.length &gt; 0 &amp;&amp;</div><div class="line">                    grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123;</div><div class="line">                callPhone();</div><div class="line">            &#125;else&#123;</div><div class="line">	            Toast.makeText(MainActivity.this, &quot;你拒绝了权限申请&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">		    &#125;</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>用户同时也可以在设置 → 权限管理中找到某个应用，查看该应用所申请的所有权限，然后自行选择开启或关闭这些权限。关闭后，应用运行时需要某个危险权限的支持，还会重复上述几个步骤，请用户再次授权。</p>
-<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>这篇文章中简单介绍了运行时权限的概念和使用过程。 Github 上也有一些封装好的动态权限申请的第三方库，可以帮助我们更加简单地进行权限申请。如果想了解更多的相关知识，可以去看看这些开源库的源码实现。</p>
-
+            
+            
         
     
 
     
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
 </div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/10/22/blockly4android-5-use-custom-js-generators/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/10/21/android-network-5-httpurlconnection/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     

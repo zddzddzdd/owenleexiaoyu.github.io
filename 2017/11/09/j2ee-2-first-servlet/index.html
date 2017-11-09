@@ -37,7 +37,7 @@
     
     <title>
         
-            Python 学习系列（一） Python 启程 | 
+            Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署 | 
         
         海树
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Owen Lee">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,Python">
+    <meta name="keywords" content="null,J2EE">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Python 学习系列（一） Python 启程 | 海树">
+    <meta property="og:title" content="Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署 | 海树">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Python"> 
+    <meta property="og:article:tag" content="J2EE"> 
 
     
-        <meta property="article:published_time" content="Fri Sep 08 2017 13:51:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Oct 21 2017 22:46:23 GMT+0800" />
+        <meta property="article:published_time" content="Thu Nov 09 2017 17:15:00 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Nov 09 2017 17:23:34 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Python 学习系列（一） Python 启程 | 海树">
+    <meta name="twitter:title" content="Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署 | 海树">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/09/08/python-learning-1-starting/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/09/08/python-learning-1-starting/index.html",
-    "headline": "Python 学习系列（一） Python 启程",
-    "datePublished": "Fri Sep 08 2017 13:51:00 GMT+0800",
-    "dateModified": "Sat Oct 21 2017 22:46:23 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html",
+    "headline": "Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署",
+    "datePublished": "Thu Nov 09 2017 17:15:00 GMT+0800",
+    "dateModified": "Thu Nov 09 2017 17:23:34 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Owen Lee",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Pythonnull",
+    "keywords": ",J2EEnull",
     "description": "",
 }
 </script>
@@ -343,6 +343,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Servlet-简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">Servlet 简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Servlet-用法"><span class="post-toc-number">3.</span> <span class="post-toc-text">Servlet 用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-应用的部署"><span class="post-toc-number">4.</span> <span class="post-toc-text">Web 应用的部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Web-应用文件结构"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Web 应用文件结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#部署方式"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">部署方式</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -360,10 +369,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FtCjSX944FE3I62c-sR0UwkfRcOw)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FnnEhHOnpYCgOb4bIWpn0fK3p7j_)">
     
             <p class="article-headline-p">
-                Python 学习系列（一） Python 启程
+                Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署
             </p>
         </div>
 
@@ -382,7 +391,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Owen Lee</strong>
-        <span>9月 08, 2017</span>
+        <span>11月 09, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -406,7 +415,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Python/">Python</a>
+        <a class="post_tag-link" href="/tags/J2EE/">J2EE</a>
     </ul>
     
 
@@ -423,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python 学习系列（一） Python 启程&url=http://yoursite.com/2017/09/08/python-learning-1-starting/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署&url=http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -432,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python 学习系列（一） Python 启程&url=http://yoursite.com/2017/09/08/python-learning-1-starting/index.html&via=Owen Lee" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署&url=http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html&via=Owen Lee" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -441,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/09/08/python-learning-1-starting/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -450,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/09/08/python-learning-1-starting/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -462,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Python 学习系列（一） Python 启程&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/09/08/python-learning-1-starting/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Java EE 学习笔记（2）第一个 Servlet 程序及 Web 应用部署&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/11/09/j2ee-2-first-servlet/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -481,27 +490,60 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <blockquote>
-<p>写在最前：我为什么要学习 Python？<br>Python 在我看来是一门非常好的胶水语言，首先语法简洁，很容易上手；其次它有非常多的第三方库，不需要频繁地去造轮子，适合快速开发；第三，很好地适用于各种研究领域，比如数据挖掘、机器学习、人工智能、科学计算等等。这些优点足以让一个开发人员心动，这也是我把 Python 作为我的第二门主要的编程语言的原因。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇笔记中将介绍 Servlet 组件的基本使用，以及使用Servlet 组件完成一个最简单的 Web 应用，并介绍在 Tomcat 上部署 Web 应用的几种方式。</p>
+<h3 id="Servlet-简介"><a href="#Servlet-简介" class="headerlink" title="Servlet 简介"></a>Servlet 简介</h3><p>Servlet 是 Java EE 规范中定义的一个组件。它是运行在服务器端的一个小程序，可以响应来自客户端的请求，生成动态的 Web 界面。Servlet 和以前写的 Java SE 的程序的区别在于：Servlet 不是一个完整的 Java 程序，没有入口 main 函数。Servlet 运行在 Web 服务器的 Web 容器中，由 Web 容器进行管理。Web 容器创建并初始化 Servlet，管理多个 Servlet 实例，将客户端的请求传递给 Servlet，并将 Servlet 的响应返回给客户端，在 Servlet 使用完后，终结该 Servlet。服务器关闭时，Web 容器会从内存中删除 Servlet。</p>
+<p>作为一个组件，Servlet 有生命周期函数。当Servlet被 Web 容器创建和被销毁时会由 Web容器调用 init()、destory() 这样的生命周期函数。</p>
+<h3 id="Servlet-用法"><a href="#Servlet-用法" class="headerlink" title="Servlet 用法"></a>Servlet 用法</h3><p>Servlet 是一个接口，我们创建自己的 Servlet 时必须实现该接口，然后实现 Servlet 接口中的抽象方法。如以下代码所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class HelloServlet implements Servlet&#123;</div><div class="line">	private ServletConfig config;</div><div class="line">	@Override</div><div class="line">	public ServletConfig getServletConfig() &#123;</div><div class="line">		return config;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public String getServletInfo() &#123;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void init(ServletConfig config) throws ServletException &#123;</div><div class="line">		this.config = config;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void destroy() &#123;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void service(ServletRequest request, ServletResponse response) </div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		response.setContentType(&quot;text/html;charset=utf-8&quot;);	</div><div class="line">		PrintWriter out = response.getWriter();</div><div class="line">		out.println(&quot;&lt;h1&gt;Hello World.&lt;/h1&gt;&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面依次来介绍这几个抽象方法。</p>
+<blockquote>
+<p>void init(ServletConfig c)</p>
 </blockquote>
-<p>简单讲述一下学习 Python 的理由后，就可以正式开始 Python 的学习之路了。</p>
-<p><strong>（一）搭建开发环境</strong></p>
-<p>由于我所使用的操作系统是 windows，所以就只介绍在 windows 下进行开发环境的搭建，其他操作系统的安装过程请自行搜索相关教程。进入 Python 的官方网站：<a href="http://python.org" target="_blank" rel="external">「Python 官网」</a>下载 Python 安装程序。<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/6424219.jpg" alt="a"></p>
-<p>目前，Python 有两大版本，即 Python 2.x 和 Python 3.x，不巧的是这两大版本之间不是兼容的。那么到底选择哪个呢？我选择的是 Python 3.x 的版本，因为Python 3.x 是代表了 Python 的未来，大部分的第三方库都完成了代码重构来兼容 Python 3.x，越来越多的项目也逐渐使用 3.x 版本进行开发。所以单从学习的角度出发，学习 3.x 无疑是更好的选择。</p>
-<p>在官网中点击Downloads，进入下载页面：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/98840474.jpg" alt="a"></p>
-<p>选择最新的 3.x 版本，点击进行下载windows操作系统下的Python程序。下载完毕后进行安装。<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/64734510.jpg" alt="a"></p>
-<p>安装结束后，打开 cmd 命令行工具，输入 python，查看是否安装成功。如果安装成功则会显示当前的 Python 版本信息，并且进入 Python 的运行环境（显示 Python 提示符’’&gt;&gt;&gt;”），此时可以在命令行中直接编写python代码，要退出时输入 exit() 就可以退出 Python 的交互环境。安装 Python 环境的同时，还会安装 pip、IDLE 和 Python 文档。pip 是 Python 的包管理工具，可以利用 pip 来下载第三方的 Python 库。IDLE 是 Python 自带的一款代码编辑器，支持交互式和脚本式的代码编辑操作。</p>
-<p>安装成功如图所示：</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/25077085.jpg" alt="a"></p>
-<p><strong>（二）运行第一个Python程序</strong></p>
-<p>安装好Python的运行环境后，就可以动手编写第一个python程序了。相信对于绝大多数的程序员来说，hello world都是自己敲出来的第一行代码。所以现在就来看看如何用 Python 打印输出 hello world 吧。</p>
-<p>方法一：在 cmd 命令行中运行程序</p>
-<p>之前我们在命令行中输入了 “python”，进入了 Python 的交互环境，可以直接编写代码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">C:\Users\redant&gt;python</div><div class="line">Python <span class="number">3.6</span><span class="number">.1</span> (v3<span class="number">.6</span><span class="number">.1</span>:<span class="number">69</span>c0db5, Mar <span class="number">21</span> <span class="number">2017</span>, <span class="number">18</span>:<span class="number">41</span>:<span class="number">36</span>) [MSC v<span class="number">.1900</span> <span class="number">64</span> bit (AMD64)] on win32</div><div class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"hello world!"</span>)</div><div class="line">hello world!</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
-<p>方法二：使用 IDLE 的交互式模式<br>打开 IDLE，就会直接进入 Python 的交互环境，此时的操作和在命令行中一致。<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/37555019.jpg" alt="a"><br>方法三：使用IDLE创建脚本文件运行程序</p>
-<p>打开IDLE，使用快捷键「Ctrl+N」，新建脚本文件，编写 hello world 代码。</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/85207618.jpg" alt="a"><br>将该文件保存为后缀为 .py 的文件，按下 F5，就会运行这个脚本文件，运行结果如图：</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-9-7/9252218.jpg" alt="a"></p>
-<p>成功输出我们想要的 hello world 后，Python 启程就告一段落了，下一篇将介绍 Python 中的变量和数据类型，再会。</p>
+<p>Servlet 的初始化方法，我们可以在这个方法中做一些初始化工作，如连接数据库等。ServletConfig 从字面意思就知道它是表示 Servlet 的配置信息，是 Web 容器和  Servlet 连接的纽带。</p>
+<p>通常实现 Servlet 接口后，类中会定义 ServletConfig 类型的成员变量，在init() 方法中使用 <strong>this.config = config;</strong> 这样的代码接收 Web 容器传递过来的 ServletConfig 实例。</p>
+<p>Web 容器在创建 Servlet 实例并初始化时调用 init() 方法，并且这个方法必须在 Servlet 接收任何客户端请求之前完成执行。init() 方法作用相当于构造函数，所以我们不用另外写构造函数（写了有可能是会报错的）。</p>
+<blockquote>
+<p>ServletConfig getServletConfig()</p>
+</blockquote>
+<p>获取 ServletConfig 对象。返回 ServletConfig 类型的成员变量。</p>
+<blockquote>
+<p>String getServletInfo()</p>
+</blockquote>
+<p>获取 Servlet 的信息，例如作者、版本、版权等。（好像没什么用，所以一般都返回 null）</p>
+<blockquote>
+<p>void destory()</p>
+</blockquote>
+<p>Web 容器在 Servlet 的 service() 方法执行完毕后（所有线程都执行结束）后调用该方法。服务器宕机时也会调用。我们可以在这个方法中进行资源的释放。</p>
+<blockquote>
+<p>void service(ServletRequest req, ServletResponse res) throws ServletException, IOException</p>
+</blockquote>
+<p>这个方法处理 Web 容器传递的客户端请求，并将响应结果通过 Web 容器返回给客户端。这个方法只有在 Servlet 的 init() 方法成功完成后才能被调用。</p>
+<p>参数一个是 ServletRequest 对象，包含客户端请求；另一个是 ServletResponse 对象，包含响应信息。这个方法会抛出两个异常，一个是 ServletException，一个是 IOException（因为在读取请求数据和发送响应数据时都使用了 IO 流）。</p>
+<p>在上面的示例代码中向客户端返回一个简单的字符串数据。调用 <strong>response.getWriter()</strong> 方法获取一个字符输出流对象，通过这个输出流来发送响应数据。ServletResponse 对象还可以调用 <strong>getOutputStream()</strong> 来获取字节输出流，用于传输二进制数据（如文件、音频、视频等）。同样的道理，ServletRequest 对象可以获取到输入流，用于读取请求数据。具体的用法后续笔记中会介绍。</p>
+<p>可以看到上面四个抽象方法中，真正处理请求的只有 service() 方法。另外四个方法在没有特别需求的情况下用处不大，但是每次实现 Servlet 接口时却都必须实现上面所有的方法，这非常不友好。</p>
+<p>Java EE 中有 Servlet 接口的实现类 HttpServlet，专门用于处理 HTTP 协议的请求（Servlet 不是只应用于HTTP 协议，对 FTP、邮件协议等同样适用）。我们现在只需继承 HttpServlet 这个类，按实际需求来选择覆盖上述方法即可。比如将上面的代码改造成继承 HttpServlet 的形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class HelloServlet extends HttpServlet&#123;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	protected void service(HttpServletRequest req, HttpServletResponse res) </div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		response.setContentType(&quot;text/html;charset=utf-8&quot;);	</div><div class="line">		PrintWriter out = response.getWriter();</div><div class="line">		out.println(&quot;&lt;h1&gt;Hello World.&lt;/h1&gt;&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>是不是简洁了很多呢，只要覆盖 service() 这一个方法就可以了。</p>
+<p>上面的两份代码中有一点区别的地方在于 service() 方法的参数类型分别是 HttpServletRequest 和 HttpServletResponse，这两个类是 ServletRequest 及  ServletResponse 的子类，专门针对于 HTTP 协议的请求与响应。</p>
+<h3 id="Web-应用的部署"><a href="#Web-应用的部署" class="headerlink" title="Web 应用的部署"></a>Web 应用的部署</h3><h4 id="Web-应用文件结构"><a href="#Web-应用文件结构" class="headerlink" title="Web 应用文件结构"></a>Web 应用文件结构</h4><p>首先来讲讲一个 Web 应用的文件结构，最简单的如下图所示（图中直角方框代表文件夹，圆角方框代表文件）。使用 Eclipse 创建的项目文件结构略有不同，但大体相似。</p>
+<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-11-9/94763744.jpg" alt="sfs"></p>
+<p>解释一上面这张图：first 是我们应用的名字（命名是随意的），first 这个文件夹也是应用的根文件夹，Web 应用中的所有资源及代码都放在这个文件夹下（或其子文件夹）。WEB-INF 这个文件夹是必不可少的，并且识别大小写，命名不能出错。它有两个子文件夹，lib 文件夹用于存放我们自己打包好的 jar 文件或第三方的 jar 文件。classes 文件夹用于存放编译好的 .class 文件。web.xml 是 Web 应用部署描述符文件，非常重要。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;web-app&gt;</div><div class="line">	&lt;servlet&gt;</div><div class="line">		&lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;</div><div class="line">		&lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;</div><div class="line">		&lt;init-param&gt;</div><div class="line">			&lt;param-name&gt;port&lt;/param-name&gt;</div><div class="line">			&lt;param-value&gt;8081&lt;/param-value&gt;</div><div class="line">		&lt;/init-param&gt;</div><div class="line">	&lt;/servlet&gt;</div><div class="line">	&lt;servlet-mapping&gt;</div><div class="line">		&lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;</div><div class="line">		&lt;url-pattern&gt;/hello&lt;/url-pattern&gt;</div><div class="line">	&lt;/servlet-mapping&gt;</div><div class="line">&lt;/web-app&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>web.xml 文件中的根标签为「web-app」，对应我们这个 web 应用。</li>
+<li>「servlet」标签对应我们自己写的 Servlet 实现类或者 HttpServlet 的子类，如 HelloServlet。</li>
+<li>该标签下一定会有「servlet-name」和「servlet-class」两个子标签。「servlet-name」可以随意指定，只要保证唯一即可。「servlet-class」指向这个 Servlet 类的位置，有包的情况下要写全路径。</li>
+<li>可以在「servlet」标签下添加「init-param」标签，由「param-name」和「param-value」这样的键值对形式组成，这些初始化参数将会封装到 ServletConfig 对象中，我们在自己的 Servlet 中可以使用如下代码获得这些参数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//获取到 Servlet 的初始化参数 port，值为 8001</div><div class="line">String port = getServletConfig().getInitParameter(&quot;port&quot;);</div></pre></td></tr></table></figure>
+<ul>
+<li>每个「servlet」标签都应该对应一个「servlet-mapping 」标签，将客户端请求的 url 映射到对应的 Servlet 中。「servlet-mapping」标签下，「servlet-name」子标签同样表示 Servlet 的唯一标识名，「url-pattern」是基于根路径的相对路径。这里的根路径为「<a href="http://localhost:8080/first」，所以完整的请求" target="_blank" rel="external">http://localhost:8080/first」，所以完整的请求</a> url 为「<a href="http://localhost:8080/first/hello」。" target="_blank" rel="external">http://localhost:8080/first/hello」。</a></li>
+</ul>
+<h4 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h4><p>在 Tomcat 上部署 Web 应用主要有以下三种方式，略作介绍，以供了解。</p>
+<p>1.将 Web 应用的文件夹（如 first）复制到 Tomcat 安装目录下的 webapps 文件夹里面。然后启动 Tomcat 即可。</p>
+<p>2.将 Web 应用的整个文件夹打成一个 war 包，然后将 war 文件放到 webapps 文件夹里。Tomcat 会自动将该 war 文件解压。</p>
+<p>3.无需复制文件夹或者打 war 包，在 Tomcat 目录下的 conf 文件夹中找到 server.xml 文件，在「Host」标签下添加一个「Context」标签，内容如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Host&gt;</div><div class="line">	&lt;Context path=&quot;/zeze&quot; docBase=&quot;D:\second&quot;/&gt;</div><div class="line">&lt;/Host&gt;</div><div class="line">//second 这个web应用在D盘下</div><div class="line">//这样部署后，可以通过http://localhost:8080/zeze/访问到这个web应用</div></pre></td></tr></table></figure>
 
         
     
@@ -522,21 +564,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/11/android-network-1-before-begin/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/09/08/git-guide-1-introduction/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/08/j2ee-1-first-web-app/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

@@ -37,7 +37,7 @@
     
     <title>
         
-            Blockly4Android 开发指南（4）工具箱 | 
+            Java EE 学习笔记（3）HttpServlet 详解 | 
         
         海树
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Owen Lee">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,Blockly4Android">
+    <meta name="keywords" content="null,J2EE">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Blockly4Android 开发指南（4）工具箱 | 海树">
+    <meta property="og:title" content="Java EE 学习笔记（3）HttpServlet 详解 | 海树">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Blockly4Android"> 
+    <meta property="og:article:tag" content="J2EE"> 
 
     
-        <meta property="article:published_time" content="Thu Oct 19 2017 22:26:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Oct 21 2017 22:45:13 GMT+0800" />
+        <meta property="article:published_time" content="Tue Nov 14 2017 22:34:00 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 14 2017 22:31:10 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Blockly4Android 开发指南（4）工具箱 | 海树">
+    <meta name="twitter:title" content="Java EE 学习笔记（3）HttpServlet 详解 | 海树">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html",
-    "headline": "Blockly4Android 开发指南（4）工具箱",
-    "datePublished": "Thu Oct 19 2017 22:26:00 GMT+0800",
-    "dateModified": "Sat Oct 21 2017 22:45:13 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html",
+    "headline": "Java EE 学习笔记（3）HttpServlet 详解",
+    "datePublished": "Tue Nov 14 2017 22:34:00 GMT+0800",
+    "dateModified": "Tue Nov 14 2017 22:31:10 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Owen Lee",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Blockly4Androidnull",
+    "keywords": ",J2EEnull",
     "description": "",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#申明"><span class="post-toc-number">1.</span> <span class="post-toc-text">申明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块组（Block-Groups）"><span class="post-toc-number">3.</span> <span class="post-toc-text">块组（Block Groups）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更改工具箱"><span class="post-toc-number">4.</span> <span class="post-toc-text">更改工具箱</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HttpServlet-API-介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">HttpServlet API 介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POST-实例"><span class="post-toc-number">2.</span> <span class="post-toc-text">POST 实例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结语"><span class="post-toc-number">3.</span> <span class="post-toc-text">结语</span></a></li></ol>
     </ul>
     
 
@@ -369,10 +369,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FnXUInbqgzohGsWF32O6KjTUBsW8)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FjMv0htbAPqGuWlRvSA8LQLH2BNa)">
     
             <p class="article-headline-p">
-                Blockly4Android 开发指南（4）工具箱
+                Java EE 学习笔记（3）HttpServlet 详解
             </p>
         </div>
 
@@ -391,7 +391,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Owen Lee</strong>
-        <span>10月 19, 2017</span>
+        <span>11月 14, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -415,7 +415,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Blockly4Android/">Blockly4Android</a>
+        <a class="post_tag-link" href="/tags/J2EE/">J2EE</a>
     </ul>
     
 
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Blockly4Android 开发指南（4）工具箱&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java EE 学习笔记（3）HttpServlet 详解&url=http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Blockly4Android 开发指南（4）工具箱&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html&via=Owen Lee" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java EE 学习笔记（3）HttpServlet 详解&url=http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html&via=Owen Lee" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Blockly4Android 开发指南（4）工具箱&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/10/19/blockly4android-4-toolbox/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Java EE 学习笔记（3）HttpServlet 详解&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/11/14/j2ee-3-httpservlet-api/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,49 +490,52 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="申明"><a href="#申明" class="headerlink" title="申明"></a>申明</h3><p>本指南翻译自 Google Blockly 官方文档。</p>
-<hr>
-<p>工具箱是用户可以创建新块的侧面菜单。使用 XML 代码来指定工具箱的结构，它可能是节点树或字符串。如果您不喜欢手动输入 XML，我们建议你查看「<a href="https://developers.google.cn/blockly/guides/create-custom-blocks/blockly-developer-tools" target="_blank" rel="external">Blockly 开发者工具</a>」。使用「Blockly 开发者工具」，您可以构建一个工具箱，并使用可视化界面自动生成其工具箱 XML 代码。这个 XML 文件放在assets 目录下，其路径在 BlocklyController 构造时传递给 BlocklyController。如果您的 Activity 继承自 <a href="https://github.com/google/blockly-android/blob/master/blocklylib-core/src/main/java/com/google/blockly/android/AbstractBlocklyActivity.java" target="_blank" rel="external">AbstractBlocklyActivity</a>，则可以使用 getToolboxContentsXmlPath（）方法返回的 XML 文件路径自动完成此操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Override</div><div class="line">protected String getToolboxContentsXmlPath() &#123;</div><div class="line">    return &quot;default/toolbox.xml&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>下面的代码是使用节点树的一个最简实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;block type=&quot;controls_if&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;block type=&quot;controls_whileUntil&quot;&gt;&lt;/block&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>这个工具箱将加载如下的块（block）：</p>
-<p><img src="https://developers.google.cn/blockly/images/toolbox-minimal-android.png" alt="enter image description here"></p>
-<p>如果只有少量的块，那么它们可能没有任何类别显示（如上面的最简实例所示）。在这种简单模式下，所有可用的块都显示在工具箱中。</p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>工具箱中块可以划分成不同的类别进行组织，下面的代码中有两个类别（“控制”和“逻辑”），每个类别包含三个块：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;category name=&quot;Control&quot;&gt;</div><div class="line">    &lt;block type=&quot;controls_if&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;controls_whileUntil&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;controls_for&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Logic&quot;&gt;</div><div class="line">    &lt;block type=&quot;logic_compare&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;logic_operation&quot;&gt;&lt;/block&gt;</div><div class="line">    &lt;block type=&quot;logic_boolean&quot;&gt;&lt;/block&gt;</div><div class="line">  &lt;/category&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>以下是所产生的工具箱，点击“逻辑”类别，便可以在弹出的窗口中看到这个类别下的三个“逻辑块”：</p>
-<p><img src="https://developers.google.cn/blockly/images/toolbox-categories-android.png" alt="enter image description here"></p>
-<p>可以使用 colour 属性来为一个类别的所有块分配一个颜色。这里需注意 colour 是英国的拼写。颜色值是定义色调的数字（0-360）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;category name=&quot;Logic&quot; colour=&quot;210&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Loops&quot; colour=&quot;120&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Math&quot; colour=&quot;230&quot;&gt;...&lt;/category&gt;</div><div class="line">  &lt;category name=&quot;Colour&quot; colour=&quot;20&quot;&gt;...&lt;/category&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>指定的颜色成为这个类别下的块的背景色，效果如下：</p>
-<p><img src="https://developers.google.cn/blockly/images/toolbox-colours-android.png" alt="enter image description here"></p>
+        <h3 id="HttpServlet-API-介绍"><a href="#HttpServlet-API-介绍" class="headerlink" title="HttpServlet API 介绍"></a>HttpServlet API 介绍</h3><p>在上篇笔记中简单提到了一下 HttpServlet 这个类，它是 Servlet 的一个针对于 Http 协议的实现类。HttpServlet  的父类是 GenericServlet，GenericServlet 是一个通用的、与网络协议无关的 Servlet 实现类。由于我们接触最多的就是使用 Http 协议进行网络通信，所以将重点放在 HttpServlet 上。</p>
+<p>下面介绍 HttpServlet 的相关方法：</p>
 <blockquote>
-<p>标签着色正在开发，敬请期待。</p>
+<p>void init(ServletConfig config)<br>void init()</p>
 </blockquote>
-<h3 id="块组（Block-Groups）"><a href="#块组（Block-Groups）" class="headerlink" title="块组（Block Groups）"></a>块组（Block Groups）</h3><p>XML 可能包含自定义块或块组。这里有四个块：</p>
-<ol>
-<li><p>一个简单的 <strong>logic_boolean</strong> 的块：<br><img src="https://developers.google.cn/blockly/images/true.png" alt="enter image description here"></p>
-</li>
-<li><p>一个已修改为显示数字 42 而不是默认值 0 的 <strong>math_number</strong> 块：<br><img src="https://developers.google.cn/blockly/images/42.png" alt="enter image description here"></p>
-</li>
-<li><p>一个具有三个math_number块连接到它的controls_for块：<br><img src="https://developers.google.cn/blockly/images/count-with.png" alt="enter image description here"></p>
-</li>
-<li><p>一个具有两个 <strong>math_number</strong> 影子块连接到它 <strong>math_arithmetic</strong> 块：<br><img src="https://developers.google.cn/blockly/images/1plus1.png" alt="enter image description here"></p>
-</li>
-</ol>
-<p>以下是生成这四个块的 XML 代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;toolbox&gt;</div><div class="line">  &lt;block type=&quot;logic_boolean&quot;&gt;&lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">    &lt;field name=&quot;NUM&quot;&gt;42&lt;/field&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;controls_for&quot;&gt;</div><div class="line">    &lt;value name=&quot;FROM&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;TO&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;10&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;BY&quot;&gt;</div><div class="line">      &lt;block type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/block&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line"></div><div class="line">  &lt;block type=&quot;math_arithmetic&quot;&gt;</div><div class="line">    &lt;field name=&quot;OP&quot;&gt;ADD&lt;/field&gt;</div><div class="line">    &lt;value name=&quot;A&quot;&gt;</div><div class="line">      &lt;shadow type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/shadow&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">    &lt;value name=&quot;B&quot;&gt;</div><div class="line">      &lt;shadow type=&quot;math_number&quot;&gt;</div><div class="line">        &lt;field name=&quot;NUM&quot;&gt;1&lt;/field&gt;</div><div class="line">      &lt;/shadow&gt;</div><div class="line">    &lt;/value&gt;</div><div class="line">  &lt;/block&gt;</div><div class="line">&lt;/toolbox&gt;</div></pre></td></tr></table></figure>
-<p>这些自定义块或组的 XML 与 Blockly 的 XML 保存格式相同。因此，为这些块构建 XML 的最简单的方法是使用「<a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" rel="external">Code application</a>」来构建块，然后切换到 XML 选项卡并复制结果。 x，y 和 id 属性被工具箱忽略，可能被删除。</p>
-<p>影子块是执行若干功能的占位符块：</p>
-<ul>
-<li>它们表示父级块的默认值。</li>
-<li>它们允许用户直接输入值，而不需要使用数字或字符串块。</li>
-<li>与常规块不同，如果用户在影子块的位置上放置块，则影子块将被替换。</li>
-<li>他们提示用户预期输入的值的类型。</li>
-</ul>
-<p>阴影块不能直接用Code应用程序构建。相反，可以使用常规块，然后将 XML 中的 <block ...=""> 和 &lt;/ block&gt; 更改为 <shadow ...=""> 和 &lt;/ shadow&gt;。</shadow></block></p>
-<h3 id="更改工具箱"><a href="#更改工具箱" class="headerlink" title="更改工具箱"></a>更改工具箱</h3><p>基于 AbstractBlocklyActivity 的应用程序可以随时通过调用 this.reloadToolbox（）来更改工具箱中可用的块。这将再次调用 getToolboxContentsXmlPath（）方法，返回一个新的值。</p>
+<p>这两个init 方法继承自它的父类。带参数的init 方法是实现 Servlet 接口所定义的抽象方法。不带参数的 init 方法则是他的重载形式。关于带参数的init 方法，在 Servlet  中已经提到，这里不再重复。这两个初始化方法的区别在于，当我们需要做自己的初始化工作（如连接数据库等）时，如果使用有参的 init 方法，必须在自己的初始化代码前手动加上 <strong>super.init(config);</strong> 这一行代码，否则在 Servlet 组件初始化时，无法接收来自Web容器的 ServletConfig 对象。而如果使用无参的 init 方法，则可以直接写自己的初始化代码。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Override</div><div class="line">public void init() throws ServletException &#123;</div><div class="line">	//连接数据库的代码</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">public void init(ServletConfig config) throws ServletException &#123;</div><div class="line">	super.init(config);</div><div class="line">	//连接数据库的代码</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在 HttpServlet 父类 GenericServlet 的源码中，这两个方法是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public void init(ServletConfig config)</div><div class="line">        throws ServletException &#123;</div><div class="line">    this.config = config;</div><div class="line">    init();</div><div class="line">&#125;</div><div class="line">public void init()</div><div class="line">        throws ServletException &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在有参的 init 方法中调用了无参的 init 方法，因此我们重写无参 init 方法时无需再显式调用父类中的实现。</p>
+<blockquote>
+<p>void service(ServletRequest req, ServletResponse res)<br>void service(HttpServletRequest req, HttpServletResponse resp)</p>
+</blockquote>
+<p>HttpServlet 中有两个 service 方法，我们还是看看源码中这两个方法时如何实现的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public void service(ServletRequest req, ServletResponse res)</div><div class="line">    throws ServletException, IOException</div><div class="line">&#123;</div><div class="line">    HttpServletRequest request;</div><div class="line">    HttpServletResponse response;</div><div class="line">    try</div><div class="line">    &#123;</div><div class="line">        request = (HttpServletRequest)req;</div><div class="line">        response = (HttpServletResponse)res;</div><div class="line">    &#125;</div><div class="line">    catch(ClassCastException e)</div><div class="line">    &#123;</div><div class="line">        throw new ServletException(&quot;non-HTTP request or response&quot;);</div><div class="line">    &#125;</div><div class="line">    service(request, response);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>从上面的代码中可以看到在参数类型分别为第一个 service 方法中，其实是将两个参数分别进行向下转型，将 ServletRequest、ServletResponse 类型的参数分别转换为 HttpServletRequest 和 HttpServletResponse，然后调用第二个 service 方法。所以我们自己的 Servlet 在覆盖 service 方法时只需要覆盖第二个即可。</p>
+<blockquote>
+<p>void doGet(HttpServletRequest req, HttpServletResponse resp)<br>void doPost(HttpServletRequest req, HttpServletResponse resp)</p>
+</blockquote>
+<p>在 HttpServlet 中这样以 do 开头的方法共有7个，分别对应 Http 协议中 7 种请求方式。我们最常使用的是 GET 和 POST 方法，所以这里只列出这两个方法。顾名思义，doGet 方法就是专门处理 GET 方式的网络请求，doPost 方法就是专门处理 POST 方式的网络请求。但是在 Servlet 中处理请求的是 service 方法，那么它和这些 doXXX 方法之间有什么联系呢？我们看看源码就可以知道了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">protected void service(HttpServletRequest req, HttpServletResponse resp)</div><div class="line">    throws ServletException, IOException</div><div class="line">&#123;</div><div class="line">    String method = req.getMethod();</div><div class="line">    if(method.equals(&quot;GET&quot;))</div><div class="line">    &#123;</div><div class="line">        long lastModified = getLastModified(req);</div><div class="line">        if(lastModified == -1L)</div><div class="line">        &#123;</div><div class="line">            doGet(req, resp);</div><div class="line">        &#125; else</div><div class="line">        &#123;</div><div class="line">            long ifModifiedSince;</div><div class="line">            try</div><div class="line">            &#123;</div><div class="line">                ifModifiedSince = req.getDateHeader(&quot;If-Modified-Since&quot;);</div><div class="line">            &#125;</div><div class="line">            catch(IllegalArgumentException iae)</div><div class="line">            &#123;</div><div class="line">                ifModifiedSince = -1L;</div><div class="line">            &#125;</div><div class="line">            if(ifModifiedSince &lt; (lastModified / 1000L) * 1000L)</div><div class="line">            &#123;</div><div class="line">                maybeSetLastModified(resp, lastModified);</div><div class="line">                doGet(req, resp);</div><div class="line">            &#125; else</div><div class="line">            &#123;</div><div class="line">                resp.setStatus(304);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125; else</div><div class="line">    if(method.equals(&quot;HEAD&quot;))</div><div class="line">    &#123;</div><div class="line">        long lastModified = getLastModified(req);</div><div class="line">        maybeSetLastModified(resp, lastModified);</div><div class="line">        doHead(req, resp);</div><div class="line">    &#125; else</div><div class="line">    if(method.equals(&quot;POST&quot;))</div><div class="line">        doPost(req, resp);</div><div class="line">    else</div><div class="line">    if(method.equals(&quot;PUT&quot;))</div><div class="line">        doPut(req, resp);</div><div class="line">    else</div><div class="line">    if(method.equals(&quot;DELETE&quot;))</div><div class="line">        doDelete(req, resp);</div><div class="line">    else</div><div class="line">    if(method.equals(&quot;OPTIONS&quot;))</div><div class="line">        doOptions(req, resp);</div><div class="line">    else</div><div class="line">    if(method.equals(&quot;TRACE&quot;))</div><div class="line">    &#123;</div><div class="line">        doTrace(req, resp);</div><div class="line">    &#125; else</div><div class="line">    &#123;</div><div class="line">        String errMsg = lStrings.getString(&quot;http.method_not_implemented&quot;);</div><div class="line">        Object errArgs[] = new Object[1];</div><div class="line">        errArgs[0] = method;</div><div class="line">        errMsg = MessageFormat.format(errMsg, errArgs);</div><div class="line">        resp.sendError(501, errMsg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看到，在第二个 service 方法中根据请求的方式，来对请求进行了转发。如果请求方法为 GET，就调用 doGet 方法进行处理，如果请求方式为 POST，则调用 doPost 方法来处理。所以我们自己的 Servlet 中，可以根据不同的请求方式，在相应的 do 方法中编写处理逻辑，而不用覆盖 service 方法。</p>
+<p>之前向客户端返回一段字符串的 Servlet 示例也可以这样来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class HelloServlet extends HttpServlet&#123;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	protected void doGet(HttpServletRequest req, HttpServletResponse resp) </div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		PrintWriter out = resp.getWriter();</div><div class="line">		out.println(&quot;Hello World.&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：上述提到的几个方法都有可能会出现异常，我们覆盖相应方法时需要在参数列表后 throws（抛出）这些异常。不然就需要在方法中使用 try-catch 结构来捕获异常。（通常 IDE 都会自动 throws 异常） </p>
+<blockquote>
+<p>String getInitParameter(String name)<br>Enumeration&lt; String&gt; getInitParameterNames()<br>ServletContext getServletContext()<br>String getServletName()</p>
+</blockquote>
+<p>上面四个方法同样继承自它的父类，但实际上这四个方法是 ServletConfig 中的方法。我们看看其中 getServletContext 的源码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public ServletContext getServletContext() &#123;</div><div class="line">    return getServletConfig().getServletContext();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看到，GenericServlet 中的 getServletContext 方法，是通过调用它的成员变量 ServletConfig 对象的 getServletContext 来实现的。这样做的好处在于我们可以直接在 Servlet 类中调用到 ServletConfig 的各个方法，更加方便。</p>
+<p>其他的一些方法如 destroy、getServletConfig、getServletInfo 等之前的笔记中已经进行了说明，这里就不一一列举。</p>
+<h3 id="POST-实例"><a href="#POST-实例" class="headerlink" title="POST 实例"></a>POST 实例</h3><p>下面，我们写一个关于 POST 请求的实例，模仿网站的登录功能。</p>
+<p><strong>1.</strong>在项目中新建一个 HTML 文件（暂时还没学到  JSP，所以没有用它），在 Eclipse 中这个文件通常放在 WebContent 这个文件夹下。index.html 中代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;form action=&quot;login&quot; method=&quot;POST&quot;&gt;</div><div class="line">		username:&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br/&gt;</div><div class="line">		password:&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br/&gt;</div><div class="line">		&lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;</div><div class="line">	&lt;/form&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>网页中有一个表单，其中有用户名和密码的输入框和登录按钮。效果如图：</p>
+<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-11-14/99301683.jpg" alt="g"></p>
+<p><strong>2.</strong>新建 LoginServlet，继承自 HttpServlet。获取到登录的用户名和密码，打印在控制台上，并在页面中显示欢迎语。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class LoginServlet extends HttpServlet&#123;</div><div class="line">	@Override</div><div class="line">	protected void doPost(HttpServletRequest req, HttpServletResponse resp) </div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		String name = req.getParameter(&quot;username&quot;);</div><div class="line">		String password = req.getParameter(&quot;password&quot;);</div><div class="line">		System.out.println(&quot;name = &quot;+name);</div><div class="line">		System.out.println(&quot;password = &quot;+password);</div><div class="line">		PrintWriter out = resp.getWriter();</div><div class="line">		out.println(&quot;Welcome,&quot;+name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：我们这里需要使用 doPost 方法，因为我们在 HTML 文件中将表单的请求方式设置成了 POST。另外，调用 <strong>req.getParameter</strong> 方法时，传进去的参数名要和  form 表单中 input 标签的 name 一致。</p>
+<p><strong>3.</strong>配置 web.xml 文件，注册 LoginServlet 并添加 URL 映射。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">	&lt;servlet-name&gt;LoginServlet&lt;/servlet-name&gt;</div><div class="line">	&lt;servlet-class&gt;cc.lixiaoyu.helloweb.LoginServlet&lt;/servlet-class&gt;</div><div class="line">&lt;/servlet&gt;</div><div class="line">&lt;servlet-mapping&gt;</div><div class="line">	&lt;servlet-name&gt;LoginServlet&lt;/servlet-name&gt;</div><div class="line">	&lt;url-pattern&gt;/login&lt;/url-pattern&gt;</div><div class="line">&lt;/servlet-mapping&gt;</div></pre></td></tr></table></figure>
+<p>这里需要注意的一个地方在于 url-pattern 的值需要和 HTML 文件里 form 表单的 action 的值一致，否则无法映射成功。</p>
+<p><strong>4.</strong>运行。我们将项目运行起来，在 HTML 页面中输入用户名 Owen，密码 123456，点击登录。实际效果如图：</p>
+<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-11-14/13161484.jpg" alt="DS"></p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>这篇笔记介绍了 HttpServlet 的相关方法，用源码解释了一些现象，并实现了一个简易的用户登录示例。这篇笔记就到这里，下篇笔记见。</p>
 
         
     
@@ -553,21 +556,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/19/know-about-recyclerview/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/19/android-network-4-webview-more/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/09/j2ee-2-first-servlet/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

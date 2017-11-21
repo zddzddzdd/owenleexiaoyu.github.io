@@ -37,7 +37,7 @@
     
     <title>
         
-            UML类图学习笔记 | 
+            Java EE 学习笔记（4）关于 Servlet 的一些补充 | 
         
         海树
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Owen Lee">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,设计模式,java">
+    <meta name="keywords" content="null,J2EE">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="UML类图学习笔记 | 海树">
+    <meta property="og:title" content="Java EE 学习笔记（4）关于 Servlet 的一些补充 | 海树">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="设计模式"> <meta property="og:article:tag" content="java"> 
+    <meta property="og:article:tag" content="J2EE"> 
 
     
-        <meta property="article:published_time" content="Sat May 06 2017 16:40:25 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Oct 21 2017 22:46:50 GMT+0800" />
+        <meta property="article:published_time" content="Fri Nov 17 2017 15:30:00 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 21 2017 15:32:54 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="UML类图学习笔记 | 海树">
+    <meta name="twitter:title" content="Java EE 学习笔记（4）关于 Servlet 的一些补充 | 海树">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html",
-    "headline": "UML类图学习笔记",
-    "datePublished": "Sat May 06 2017 16:40:25 GMT+0800",
-    "dateModified": "Sat Oct 21 2017 22:46:50 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html",
+    "headline": "Java EE 学习笔记（4）关于 Servlet 的一些补充",
+    "datePublished": "Fri Nov 17 2017 15:30:00 GMT+0800",
+    "dateModified": "Tue Nov 21 2017 15:32:54 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Owen Lee",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",设计模式,javanull",
+    "keywords": ",J2EEnull",
     "description": "",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-类"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-接口"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 接口</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-注释"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 注释</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-继承关系"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.继承关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-实现关系"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.实现关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-依赖关系"><span class="post-toc-number">6.</span> <span class="post-toc-text">6.依赖关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-关联关系"><span class="post-toc-number">7.</span> <span class="post-toc-text">7.关联关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-聚合关系"><span class="post-toc-number">8.</span> <span class="post-toc-text">8.聚合关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#9-组合关系"><span class="post-toc-number">9.</span> <span class="post-toc-text">9.组合关系</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-HttpServletRequest"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. HttpServletRequest</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-HttpServletResponse"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. HttpServletResponse</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-ServletConfig"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. ServletConfig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-ServletContext"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. ServletContext</span></a></li></ol>
     </ul>
     
 
@@ -369,10 +369,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FpnzwJGT2hmWbX_vqnLLNUKJXjr8)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://image.wufazhuce.com/FoBEubfSGAroMoMdI_jx0nH0gh7y)">
     
             <p class="article-headline-p">
-                UML类图学习笔记
+                Java EE 学习笔记（4）关于 Servlet 的一些补充
             </p>
         </div>
 
@@ -391,7 +391,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Owen Lee</strong>
-        <span>5月 06, 2017</span>
+        <span>11月 17, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -415,7 +415,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/java/">java</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+        <a class="post_tag-link" href="/tags/J2EE/">J2EE</a>
     </ul>
     
 
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=UML类图学习笔记&url=http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java EE 学习笔记（4）关于 Servlet 的一些补充&url=http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html&pic=http://yoursite.com/img/fish.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=UML类图学习笔记&url=http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html&via=Owen Lee" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java EE 学习笔记（4）关于 Servlet 的一些补充&url=http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html&via=Owen Lee" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=UML类图学习笔记&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/05/06/uml-class-learning-notes/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=海树&title=Java EE 学习笔记（4）关于 Servlet 的一些补充&summary=null&pics=http://yoursite.com/img/fish.png&url=http://yoursite.com/2017/11/17/j2ee-4-some-supplements/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,52 +490,141 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>学习设计模式就不能不先学习UML类图，在面向对象编程中，类是对某一种具有相同特征的事物的抽象归纳。类图则展示了一组类、接口和协作以及它们之间的关系。类图在系统分析和设计阶段发挥着重要的作用，是编码和测试的重要模型依据。</p>
-<p>UML类图由类、接口、注释等基本元素和类与类之间、类与接口之间的关系所组成。首先我们来看基础元素。</p>
-<h4 id="1-类"><a href="#1-类" class="headerlink" title="1. 类"></a><strong>1. 类</strong></h4><p>类的UML图由三部分组成：类名、属性和方法。</p>
-<p>类名如果用斜体书写，则代表是抽象类，否则表示是具体的类。</p>
-<p>属性描述了类的成员变量以及变量的类型，可以根据需要只列出重要的成员变量。</p>
-<p>方法（或操作）描述类的方法以及方法的返回类型，同样可以根据需要只列出重要的方法。</p>
-<p>在属性和方法前都可以附加表示访问权限的修饰符。访问权限在面向对象中同样具有非常重要的作用，是面向对象封装性的基础。</p>
-<p><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/87331342-file_1494059828423_17c7e.png" alt=""></p>
+        <p>这篇笔记中，针对之前笔记中出现的一些类和接口，以及这些类的相关方法，做一个补充。涉及的类有 HttpServletRequest、HttpservletResponse、ServletConfig、ServletContext。</p>
+<h3 id="1-HttpServletRequest"><a href="#1-HttpServletRequest" class="headerlink" title="1. HttpServletRequest"></a>1. HttpServletRequest</h3><p>HttpServletRequest 是一个接口，继承自 ServletRequest，表示客户端向 Servlet 组件发送的 HTTP     请求。作为一个HTTP请求，它必然包含以下信息：</p>
+<ul>
+<li>请求方式（GET、POST 等）</li>
+<li>请求的URL</li>
+<li>请求头信息</li>
+<li>请求的正文数据（POST 中会有）</li>
+</ul>
+<p>我们通过介绍它的常用 API 来了解如何通过HttpServletRequest 对象来获取上述这些信息。</p>
 <blockquote>
-<p>其中默认权限在Java中表示该属性或方法只能被同一包下的类访问。</p>
+<p>ServletInputStream <strong>getInputStream</strong>() throws IOException</p>
 </blockquote>
-<p>下面是一个类的UML图的示例：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/44132689-file_1494000713842_15a2a.png" alt="|center"></p>
-<h4 id="2-接口"><a href="#2-接口" class="headerlink" title="2. 接口"></a><strong>2. 接口</strong></h4><p>接口其实也是一种特殊的类，因此接口的UML图和类的UML图极为相似，第一部分是接口的名称，<strong>必须用斜体表示，顶端要用&lt;&lt; interface &gt;&gt;修饰</strong>。第二部分是接口中的常量。第三部分是方法（操作）。由于接口中的常量和方法都是public的权限，所以在常量和方法名之前都要用加号（+）进行修饰。下面是接口UML图示例：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/65394048-file_1494001417183_aebc.png" alt="|center"></p>
-<h4 id="3-注释"><a href="#3-注释" class="headerlink" title="3. 注释"></a><strong>3. 注释</strong></h4><p>UML中用一个右上方带卷角的长方形表示注释，并且用<strong>虚线</strong>将注释与其所注释的内容相连接。实例如图所示：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/31194674-file_1494002049620_17f02.png" alt="|center"></p>
-<h4 id="4-继承关系"><a href="#4-继承关系" class="headerlink" title="4.继承关系"></a><strong>4.继承关系</strong></h4><p>在UML中用<strong>连接两个类的带空心三角形的实线</strong>表示继承关系，起始端是子类，终点端是父类，通常父类在上，子类在下。示例如图所示：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/28337036-file_1494037513572_e3ca.png" alt="|center"><br>所表示的Java代码为：</p>
-<pre><code>public class Father{
-    ...
-} 
-class Son extends Father{
-    ...
-}
-</code></pre><h4 id="5-实现关系"><a href="#5-实现关系" class="headerlink" title="5.实现关系"></a><strong>5.实现关系</strong></h4><p>一个类实现了一个接口，则该类与该接口之间就是实现关系，在UML中用<strong>带空心三角形的虚线</strong>连接类与接口，起始端是类，终点端是接口。示例如图：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/29615208-file_1494037850940_4d0e.png" alt="|center"><br>所表示的Java代码为：</p>
-<pre><code>public interface A{
-    void method();
-}
-class B implements A{
-    public void method(){
-        ...
-    }
-}
-</code></pre><h4 id="6-依赖关系"><a href="#6-依赖关系" class="headerlink" title="6.依赖关系"></a><strong>6.依赖关系</strong></h4><p>如果B类作为参数被A类中的某个方法中使用，则A类和B类的关系就是依赖关系，即A依赖于B。在UML中用<strong>带箭头的虚线</strong>连接具有依赖关系的两个类，虚线起始端是A，终点端是B。示例如图：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/68746971-file_1494042954996_160b4.png" alt="|center"><br>表示的Java代码为：</p>
-<pre><code>public class Person{
-    public void work(Bus bus){
-        bus.drive();
-    }
-}
-public class Bus{
-    public void drive(){
-        ...
-    }
-}
-</code></pre><h4 id="7-关联关系"><a href="#7-关联关系" class="headerlink" title="7.关联关系"></a><strong>7.关联关系</strong></h4><p>如果B类作为A类的一个属性存在，则A、B之间具有关联关系，称A关联于B。在UML中用<strong>带箭头的实线</strong>连接两个具有关联关系的类。起始端是A类，终端是B类。关联关系有三种类型，单向关联，双向关联，自关联。<br>三种关联的UML图：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/37629725-file_1494045014149_dda3.png" alt="|center"></p>
-<h4 id="8-聚合关系"><a href="#8-聚合关系" class="headerlink" title="8.聚合关系"></a><strong>8.聚合关系</strong></h4><p>聚合关系是关联关系的一种（弱关联），与关联不同的是聚合体现的是整体和个体的关系，这里的整体和个体是可以分离的个体可以独立于整体而存在，例如火车站中的火车。二者是has-a的关系。</p>
-<p>在UML中用<strong>带空心菱形头和箭头的实线</strong>表示聚合关系。菱形头指向整体，箭头指向个体。示例如图：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/75122623-file_1494048547361_de74.png" alt="|center"></p>
-<h4 id="9-组合关系"><a href="#9-组合关系" class="headerlink" title="9.组合关系"></a><strong>9.组合关系</strong></h4><p>组合关系也是关联关系中的一种（强关联），是一种contains-a的关系，一旦整体对象不存在，部分对象也不会存在，部分和整体有着相同的生命周期。代码上表示为A类中的成员变量是B类的申明的对象，B的对象在A对象创建时被创建。</p>
-<p>在UML中用带实心菱形和箭头的实线表示组合关系。菱形头指向A类，箭头指向B类。示例如图：<br><img src="http://opgrjw8x2.bkt.clouddn.com/17-5-6/60950819-file_1494048631556_1086a.png" alt="|center"></p>
+<p>这个方法是其父接口中的方法，获取请求的对应的字节输入流对象。我们可以通过这个方法获得用户上传的二进制数据，比如音频、视频文件等。</p>
+<blockquote>
+<p>BufferedReader <strong>getReader</strong>() throws IOException</p>
+</blockquote>
+<p>获取请求对应的字符输入流对象，读取客户端的字符数据。</p>
+<blockquote>
+<p>String <strong>getParameter</strong>(String name)<br>Enumeration&lt; String&gt; <strong>getParameterNames</strong>()</p>
+</blockquote>
+<p>上面两个方法都与获取请求参数有关，我们使用 POST 方法发送的参数就是通过这几个方法来获得。第一个通过参数名返回参数的值。第二个返回所有参数名的一个迭代器对象，可以依次迭代取出每个参数名对应的参数值。</p>
+<p>例如，POST 请求中有三个参数 username=Owen;age=22;password=123456，我们看看如何在Servlet中获得这些参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Enumeration&lt;String&gt; names = request.getParameterNames();</div><div class="line">while(names.hasMoreElements())&#123;</div><div class="line">	String paramName = names.nextElement();</div><div class="line">	String paramValue = request.getParameter(paramName);</div><div class="line">	System.out.println(&quot;参数：&quot;+paramName+&quot;=&quot;+paramValue);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>String <strong>getMethod</strong>()</p>
+</blockquote>
+<p>返回 HTTP 请求的方式，如 GET、POST 等。上篇笔记中就提到 HttpServlet 的 service 方法正是通过获取到请求方式来进行请求的转发，详细介绍可见上篇笔记。</p>
+<blockquote>
+<p>String <strong>getHeader</strong>(String name)<br>Enumeration&lt; String&gt; <strong>getHeaderNames</strong>()<br>int <strong>getIntHeader</strong>(String name)<br>long <strong>getDateHeader</strong>(String name)</p>
+</blockquote>
+<p>上面几个方法都与获取 HTTP 请求的请求头有关。因为请求头中每一项，都是键值对的形式，所以这几个方法和上面获取 POST 请求参数的方法非常类似。第一个通过Header 的名字返回 Header的值。第二个方法返回所有header的迭代器对象。第三个方法通过header的名字返回header的值，这个值的类型必须是int类型，否则会出现 NumberFormatException 的异常。第四个方法通过header的名字返回日期相关的header的值。这个值必须要可以转换程Date类型，否则会抛出 IllegalArgumentException 的异常。</p>
+<blockquote>
+<p>Cookie[] <strong>getCookies</strong>()</p>
+</blockquote>
+<p>这个方法返回一个包含了客户端与此请求一起发送的所有Cookie对象的数组。如果没有发送cookie，这个方法将返回null。关于 Cookie 后面的笔记中也会有详细说明。</p>
+<blockquote>
+<p>HttpSession <strong>getSession</strong>()<br>HttpSession <strong>getSession</strong>(boolean create)</p>
+</blockquote>
+<p>返回与这个请求关联的会话 HttpSession，如果没有就新建一个会话并返回。第二个方法中参数 create 如果为 false，则没有关联的会话时不会创建新的会话，返回 null。关于 Session，后面同样会详细介绍。</p>
+<h3 id="2-HttpServletResponse"><a href="#2-HttpServletResponse" class="headerlink" title="2. HttpServletResponse"></a>2. HttpServletResponse</h3><p>HttpServletResponse 是一个接口，它的父接口是ServletResponse，表示Servlet组件向客户端返回的一个HTTP响应。同样，和HttpServletRequest类似，作为Http响应，它应该包含以下信息。</p>
+<ul>
+<li>响应状态信息（状态码等）</li>
+<li>响应头部</li>
+<li>响应内容</li>
+</ul>
+<p>在 HttpServletResponse 的API中，常见的方法有：</p>
+<blockquote>
+<p>ServletOutputStream <strong>getOutputStream</strong>() throws IOException</p>
+</blockquote>
+<p>这个方法是 HttpServletResponse 的父接口  ServletResponse 中定义的方法，获取响应关联的字节输出流，用来向客户端返回二进制数据，比如传输一个文件等。会抛出 IOException。</p>
+<blockquote>
+<p>PrintWriter <strong>getWriter</strong>() throws IOException</p>
+</blockquote>
+<p>同样是父接口中定义的方法，获取响应所关联的字符输出流，向客户端传输字符数据。（如之前实例中的返回 Hello World）</p>
+<blockquote>
+<p>void <strong>setContentLength</strong>(int len)</p>
+</blockquote>
+<p>设置响应正文长度。</p>
+<blockquote>
+<p>void <strong>setContentType</strong>(String type)</p>
+</blockquote>
+<p>设置响应正文的MIME类型及字符编码格式。<br>例如返回的是一个HTML页面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//设置MIME 类型为text/html，编码格式为utf-8</div><div class="line">resp.setContentType(&quot;text/html;charset=utf-8&quot;);</div></pre></td></tr></table></figure>
+<p>常用的MIME类型有：</p>
+<blockquote>
+<p>text/html HTML 格式<br>text/xml XML 格式<br>text/json JSON格式<br>image/jpg JPG图片格式</p>
+</blockquote>
+<p>再比如返回的是一个可下载的二进制文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//设置MIME类型为application/x-download</div><div class="line">resp.setContentType(&quot;application/x-download&quot;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>void <strong>setHeader</strong>(String name,String value)</p>
+</blockquote>
+<p>此方法设置响应头部信息，还有很多类似的方法如addHeader等，作用大同小异，这里不一一列举。这个方法的两个参数分别是header 的名字和值。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">resp.setHeader(&quot;Content-Type&quot;,&quot;text/html;charset=utf-8&quot;);</div></pre></td></tr></table></figure>
+<p>上述代码的作用和之前使用 setContentType 方法是一样的。</p>
+<blockquote>
+<p>void <strong>setStatus</strong>(int sc)<br>void <strong>setStatus</strong>(int sc, String sm)</p>
+</blockquote>
+<p>设置该响应的状态码及说明行文字。</p>
+<blockquote>
+<p>void <strong>sendError</strong>(int sc) throws IOException<br>void <strong>sendError</strong>(int sc, String msg) throws IOException</p>
+</blockquote>
+<p>发送响应出错时的状态码及原因。</p>
+<blockquote>
+<p>void <strong>addCookie</strong>(Cookie cookie)</p>
+</blockquote>
+<p>将指定的cookie添加到响应中。可以多次调用此方法来设置多个Cookie。Cookie 的相关知识后面笔记中会介绍。</p>
+<blockquote>
+<p>String <strong>encodeURL</strong>(String url)</p>
+</blockquote>
+<p>这个方法用于进行URL重写，当浏览器禁用Cookie时，可以使用这个方法来维持会话。</p>
+<h3 id="3-ServletConfig"><a href="#3-ServletConfig" class="headerlink" title="3. ServletConfig"></a>3. ServletConfig</h3><p>ServletConfig 接口用于在Servlet初始化时，Web容器向Servlet组件传递消息。ServletConfig 传递的初始化参数均以键值对的形式存在，所以和HttpServletRequest 中获取请求参数方式非常类似。ServletConfig 中的方发只有四个，我们依次来看看。</p>
+<blockquote>
+<p>String <strong>getInitParameter</strong>(String name)<br>Enumeration&lt; String&gt; <strong>getInitParameterNames</strong>()</p>
+</blockquote>
+<p>第一个方法通过初始化参数名来获得对应的值，第二个方法获得初始化参数名字的迭代器对象，逐一迭代可以取得所有的参数名。</p>
+<p>在web.xml 中声明一个Servlet 组件时，可以添加初始化参数，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">	&lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;</div><div class="line">	&lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;</div><div class="line">	&lt;init-param&gt;</div><div class="line">		&lt;param-name&gt;port&lt;/param-name&gt;</div><div class="line">		&lt;param-value&gt;8081&lt;/param-value&gt;</div><div class="line">	&lt;/init-param&gt;</div><div class="line">	&lt;init-param&gt;</div><div class="line">		&lt;param-name&gt;host&lt;/param-name&gt;</div><div class="line">		&lt;param-value&gt;127.0.0.1&lt;/param-value&gt;</div><div class="line">	&lt;/init-param&gt;</div><div class="line">&lt;/servlet&gt;</div></pre></td></tr></table></figure>
+<p>上述代码中添加了两个初始化参数，参数名分别为host和port。我们可以通过以下代码来获取相应的初始化参数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Enumeration&lt;String&gt; names = config.getInitParameterNames();</div><div class="line">while(names.hasMoreElements())&#123;</div><div class="line">	String initParamName = names.nextElement();</div><div class="line">	String initParamValue = config.getInitParameter(initParamName);</div><div class="line">	System.out.println(&quot;初始化参数：&quot;+initParamName+&quot;=&quot;+initParamValue);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>用法和之前的HttpServletRequest获取请求参数是一样的。</p>
+<blockquote>
+<p>String getServletName()</p>
+</blockquote>
+<p>返回当前Servlet实例的名称。</p>
+<blockquote>
+<p>ServletContext getServletContext()</p>
+</blockquote>
+<p>这个方法返回当前这个 Sercvlet 所在的应用的上下文信息。</p>
+<h3 id="4-ServletContext"><a href="#4-ServletContext" class="headerlink" title="4. ServletContext"></a>4. ServletContext</h3><p>Web 容器启动时会给每个Web应用都创建一个ServletContext对象，它代表当前的Web应用。这个ServletContext 对象被应用中的多个Servlet组件所共享，不同的Servlet 可以通过ServletContext 来进行通讯。</p>
+<p>ServletContext 对象可以由ServletConfig 对象的方法来获得，也可以通过Servlet对象的方法获得。（之前的笔记中有提到）</p>
+<p>ServletContext 主要有以下几个作用：</p>
+<p><strong>4.1 多个Servlet 通过ServletContext 实现数据共享。</strong></p>
+<p>涉及的方法有：</p>
+<blockquote>
+<p>void setAttribute(String name, Object object)<br>Enumeration&lt; String&gt; getAttributeNames()<br>Object getAttribute(String name)</p>
+</blockquote>
+<p>第一个方法向ServletContext中写入共享属性，第二第三个方法从它读出共享属性，由于也是采用键值对的形式，就不赘述，应该已经非常简单了。</p>
+<p>例如，在LoginServlet 中向ServletContext中写入属性name：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ServletContext context = this.getServletContext();</div><div class="line">context.setAttribute(&quot;name&quot;, &quot;owen&quot;);</div></pre></td></tr></table></figure>
+<p>在HelloServlet 中读出这个属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ServletContext context = this.getServletContext();</div><div class="line">String name = (String) context.getAttribute(&quot;name&quot;);</div><div class="line">System.out.println(name);</div></pre></td></tr></table></figure>
+<p><strong>4.2 获取Web应用的初始化参数</strong></p>
+<p>ServletConfig 能够获得对应Servlet的初始化参数，同样，Web应用也有一些初始化参数，这些参数就是通过ServletContext对象来获得。</p>
+<p>涉及的方法有：</p>
+<blockquote>
+<p>boolean setInitParameter(String name, String value)<br>Enumeration&lt; String&gt; getInitParameterNames()<br>String getInitParameter(String name)</p>
+</blockquote>
+<p>这样形式的方法和ServletConfig 中的方法几乎一模一样，也无须多解释，直接来一个例子就行了。</p>
+<p>web.xml 文件中Web应用的初始化参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;web-app&gt;   </div><div class="line">	&lt;context-param&gt;   </div><div class="line">		&lt;param-name&gt;password&lt;/param-name&gt;   </div><div class="line">		&lt;param-value&gt;123456&lt;/param-value&gt;   </div><div class="line">	&lt;/context-param&gt;   </div><div class="line">	&lt;context-param&gt;   </div><div class="line">		&lt;param-name&gt;username&lt;/param-name&gt;   </div><div class="line">		&lt;param-value&gt;root&lt;/param-value&gt;   </div><div class="line">	&lt;/context-param&gt;   </div><div class="line">&lt;/web-app&gt;</div></pre></td></tr></table></figure>
+<p>在Servlet中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ServletContext context = this.getServletContext();   </div><div class="line">//获取web.xml文件中所有的初始化应用参数          </div><div class="line">Enumeration&lt;String&gt; enumer = context.getInitParameterNames();   </div><div class="line">while(enumer.hasMoreElements())&#123;   </div><div class="line">	String name = enumer.nextElement();   </div><div class="line">	String value = context.getInitParameter(name);   </div><div class="line">	System.out.println(name+&quot;==========&quot;+value);   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>4.3 实现Servlet的转发</strong><br><strong>4.4 利用ServletContext获取资源文件</strong></p>
+<p>这两种方法后续笔记中会有详细介绍。</p>
 
         
     
@@ -556,7 +645,7 @@ public class Bus{
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/05/09/talk-about-learning-situation/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/11/21/11-tasks-from-now-to-graduation/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -570,7 +659,7 @@ public class Bus{
 
     <!-- Next Nav -->
     
-        <a href="/2017/05/06/edittext-to-change-cursor-color/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/14/j2ee-3-httpservlet-api/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
